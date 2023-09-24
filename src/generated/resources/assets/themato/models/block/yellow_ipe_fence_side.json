@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/fence_side",
+  "textures": {
+    "texture": "themato:block/yellow_ipe_planks"
+  }
+}

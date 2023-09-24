@@ -1,4 +1,21 @@
 {
+  "block.themato.potted_yellow_ipe_sapling": "Potted Yellow Ipe Sapling",
+  "block.themato.stripped_yellow_ipe_log": "Stripped Yellow Ipe Log",
+  "block.themato.stripped_yellow_ipe_wood": "Stripped Yellow Ipe Wood",
+  "block.themato.yellow_ipe_button": "Yellow Ipe Button",
+  "block.themato.yellow_ipe_fence": "Yellow Ipe Fence",
+  "block.themato.yellow_ipe_fence_gate": "Yellow Ipe Fence Gate",
+  "block.themato.yellow_ipe_leaves": "Yellow Ipe Leaves",
+  "block.themato.yellow_ipe_log": "Yellow Ipe Log",
+  "block.themato.yellow_ipe_planks": "Yellow Ipe Planks",
+  "block.themato.yellow_ipe_pressure_plate": "Yellow Ipe Pressure Plate",
+  "block.themato.yellow_ipe_sapling": "Yellow Ipe Sapling",
+  "block.themato.yellow_ipe_sign": "Yellow Ipe Sign",
+  "block.themato.yellow_ipe_slab": "Yellow Ipe Slab",
+  "block.themato.yellow_ipe_stairs": "Yellow Ipe Stairs",
+  "block.themato.yellow_ipe_wall_sign": "Yellow Ipe Wall Sign",
+  "block.themato.yellow_ipe_wood": "Yellow Ipe Wood",
   "configs.themato.absolutelyNothing": "Absolutely Nothing",
-  "configs.themato.absolutelyNothing.tooltip": "This does absolutely nothing."
+  "configs.themato.absolutelyNothing.tooltip": "This does absolutely nothing.",
+  "itemGroup.themato_tab": "The Mato"
 }

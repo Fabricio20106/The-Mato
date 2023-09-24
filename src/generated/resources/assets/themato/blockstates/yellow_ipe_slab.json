@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=top": {
+      "model": "themato:block/yellow_ipe_slab_top"
+    },
+    "type=bottom": {
+      "model": "themato:block/yellow_ipe_slab"
+    },
+    "type=double": {
+      "model": "themato:block/yellow_ipe_planks"
+    }
+  }
+}

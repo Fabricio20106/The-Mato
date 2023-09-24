@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "themato:yellow_ipe_log",
+    "themato:yellow_ipe_wood",
+    "themato:stripped_yellow_ipe_log",
+    "themato:stripped_yellow_ipe_wood"
+  ]
+}

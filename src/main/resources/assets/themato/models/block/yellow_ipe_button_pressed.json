@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/button_pressed",
+  "textures": {
+    "texture": "themato:block/yellow_ipe_planks"
+  }
+}

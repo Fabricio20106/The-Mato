@@ -39,7 +39,7 @@ minecraft {
     // An Srg-named sources jar is made by default. Uncomment this to disable.
     // makeObfSourceJar = false
 
-    // accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg')
+    accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg')
 
     // Default run configurations.
     // These can be tweaked, removed, or duplicated as needed.
