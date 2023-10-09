@@ -1,8 +1,8 @@
-package com.junethewoods.themato.init;
+package com.junethewoods.themato.block;
 
 import com.junethewoods.themato.TheMato;
-import com.junethewoods.themato.block.MTStandingSignBlock;
-import com.junethewoods.themato.block.MTWallSignBlock;
+import com.junethewoods.themato.block.custom.MTStandingSignBlock;
+import com.junethewoods.themato.block.custom.MTWallSignBlock;
 import com.junethewoods.themato.util.MTWoodTypes;
 import net.minecraft.block.*;
 import net.minecraft.block.trees.OakTree;

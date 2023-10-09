@@ -1,7 +1,7 @@
 package com.junethewoods.themato.data.models;
 
 import com.junethewoods.themato.TheMato;
-import com.junethewoods.themato.init.MTBlocks;
+import com.junethewoods.themato.block.MTBlocks;
 import net.minecraft.block.*;
 import net.minecraft.data.DataGenerator;
 import net.minecraftforge.client.model.generators.BlockStateProvider;

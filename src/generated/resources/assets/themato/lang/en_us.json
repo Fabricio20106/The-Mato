@@ -1,4 +1,5 @@
 {
+  "biome.themato.ipe_forest": "Ipe Forest",
   "block.themato.potted_yellow_ipe_sapling": "Potted Yellow Ipe Sapling",
   "block.themato.stripped_yellow_ipe_log": "Stripped Yellow Ipe Log",
   "block.themato.stripped_yellow_ipe_wood": "Stripped Yellow Ipe Wood",
@@ -15,7 +16,7 @@
   "block.themato.yellow_ipe_stairs": "Yellow Ipe Stairs",
   "block.themato.yellow_ipe_wall_sign": "Yellow Ipe Wall Sign",
   "block.themato.yellow_ipe_wood": "Yellow Ipe Wood",
-  "configs.themato.absolutelyNothing": "Absolutely Nothing",
-  "configs.themato.absolutelyNothing.tooltip": "This does absolutely nothing.",
+  "configs.themato.ipeForestGeneration": "Ipe Forest Generation",
+  "configs.themato.ipeForestGeneration.tooltip": "Allow Ipe Forests to generate?",
   "itemGroup.themato_tab": "The Mato"
 }

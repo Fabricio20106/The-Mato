@@ -1,5 +1,6 @@
-package com.junethewoods.themato.blockentity;
+package com.junethewoods.themato.blockentity.custom;
 
+import com.junethewoods.themato.blockentity.MTBlockEntities;
 import net.minecraft.tileentity.SignTileEntity;
 import net.minecraft.tileentity.TileEntityType;
 

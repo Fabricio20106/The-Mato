@@ -1,6 +1,8 @@
-package com.junethewoods.themato.init;
+package com.junethewoods.themato.item;
 
 import com.junethewoods.themato.TheMato;
+import com.junethewoods.themato.block.MTBlocks;
+import com.junethewoods.themato.util.MTTab;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.SignItem;

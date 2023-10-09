@@ -1,6 +1,6 @@
-package com.junethewoods.themato.block;
+package com.junethewoods.themato.block.custom;
 
-import com.junethewoods.themato.blockentity.MTSignBlockEntity;
+import com.junethewoods.themato.blockentity.custom.MTSignBlockEntity;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.StandingSignBlock;
 import net.minecraft.block.WoodType;

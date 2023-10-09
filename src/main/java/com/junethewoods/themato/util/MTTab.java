@@ -1,5 +1,6 @@
-package com.junethewoods.themato.init;
+package com.junethewoods.themato.util;
 
+import com.junethewoods.themato.item.MTItems;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 

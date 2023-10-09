@@ -1,7 +1,7 @@
 package com.junethewoods.themato.data.lang;
 
 import com.junethewoods.themato.TheMato;
-import com.junethewoods.themato.init.MTBlocks;
+import com.junethewoods.themato.block.MTBlocks;
 import net.minecraft.data.DataGenerator;
 import net.minecraftforge.common.data.LanguageProvider;
 
@@ -35,8 +35,9 @@ public class MTEnglishLanguageProvider extends LanguageProvider {
         add("block.themato.yellow_ipe_wall_sign", "Yellow Ipe Wall Sign");
 
         add("itemGroup.themato_tab", "The Mato");
+        add("biome.themato.ipe_forest", "Ipe Forest");
 
-        add("configs.themato.absolutelyNothing", "Absolutely Nothing");
-        add("configs.themato.absolutelyNothing.tooltip", "This does absolutely nothing.");
+        add("configs.themato.ipeForestGeneration", "Ipe Forest Generation");
+        add("configs.themato.ipeForestGeneration.tooltip", "Allow Ipe Forests to generate?");
     }
 }

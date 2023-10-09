@@ -1,7 +1,8 @@
 package com.junethewoods.themato.blockentity;
 
 import com.junethewoods.themato.TheMato;
-import com.junethewoods.themato.init.MTBlocks;
+import com.junethewoods.themato.block.MTBlocks;
+import com.junethewoods.themato.blockentity.custom.MTSignBlockEntity;
 import net.minecraft.tileentity.TileEntityType;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;

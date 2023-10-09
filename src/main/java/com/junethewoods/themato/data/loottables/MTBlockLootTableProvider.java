@@ -1,9 +1,8 @@
 package com.junethewoods.themato.data.loottables;
 
 import com.junethewoods.themato.TheMato;
-import com.junethewoods.themato.init.MTBlocks;
+import com.junethewoods.themato.block.MTBlocks;
 import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
 import net.minecraft.data.loot.BlockLootTables;
 import net.minecraftforge.registries.ForgeRegistries;
 
