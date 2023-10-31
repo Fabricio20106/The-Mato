@@ -1,6 +1,9 @@
 {
   "replace": false,
   "values": [
+    "themato:pink_ipe_planks",
+    "themato:purple_ipe_planks",
+    "themato:red_ipe_planks",
     "themato:yellow_ipe_planks"
   ]
 }

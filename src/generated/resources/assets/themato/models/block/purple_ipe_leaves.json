@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "themato:block/purple_ipe_leaves"
+  }
+}

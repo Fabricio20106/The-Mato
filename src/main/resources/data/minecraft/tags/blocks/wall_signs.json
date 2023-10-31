@@ -1,6 +1,9 @@
 {
   "replace": false,
   "values": [
+    "themato:pink_ipe_wall_sign",
+    "themato:purple_ipe_wall_sign",
+    "themato:red_ipe_wall_sign",
     "themato:yellow_ipe_wall_sign"
   ]
 }

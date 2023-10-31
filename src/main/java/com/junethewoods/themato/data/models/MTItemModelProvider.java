@@ -26,6 +26,45 @@ public class MTItemModelProvider extends ItemModelProvider {
         ModelFile generated = getExistingFile(mcLoc("item/generated"));
         ModelFile handheld = getExistingFile(mcLoc("item/handheld"));
 
+        withExistingParent("pink_ipe_log");
+        withExistingParent("pink_ipe_wood");
+        withExistingParent("stripped_pink_ipe_log");
+        withExistingParent("stripped_pink_ipe_wood");
+        withExistingParent("pink_ipe_leaves");
+        withExistingParent("pink_ipe_planks");
+        withExistingParent("pink_ipe_stairs");
+        withExistingParent("pink_ipe_slab");
+        withExistingParent("pink_ipe_fence", "_inventory");
+        withExistingParent("pink_ipe_fence_gate");
+        withExistingParent("pink_ipe_pressure_plate");
+        withExistingParent("pink_ipe_button", "_inventory");
+
+        withExistingParent("purple_ipe_log");
+        withExistingParent("purple_ipe_wood");
+        withExistingParent("stripped_purple_ipe_log");
+        withExistingParent("stripped_purple_ipe_wood");
+        withExistingParent("purple_ipe_leaves");
+        withExistingParent("purple_ipe_planks");
+        withExistingParent("purple_ipe_stairs");
+        withExistingParent("purple_ipe_slab");
+        withExistingParent("purple_ipe_fence", "_inventory");
+        withExistingParent("purple_ipe_fence_gate");
+        withExistingParent("purple_ipe_pressure_plate");
+        withExistingParent("purple_ipe_button", "_inventory");
+
+        withExistingParent("red_ipe_log");
+        withExistingParent("red_ipe_wood");
+        withExistingParent("stripped_red_ipe_log");
+        withExistingParent("stripped_red_ipe_wood");
+        withExistingParent("red_ipe_leaves");
+        withExistingParent("red_ipe_planks");
+        withExistingParent("red_ipe_stairs");
+        withExistingParent("red_ipe_slab");
+        withExistingParent("red_ipe_fence", "_inventory");
+        withExistingParent("red_ipe_fence_gate");
+        withExistingParent("red_ipe_pressure_plate");
+        withExistingParent("red_ipe_button", "_inventory");
+
         withExistingParent("yellow_ipe_log");
         withExistingParent("yellow_ipe_wood");
         withExistingParent("stripped_yellow_ipe_log");
@@ -39,8 +78,14 @@ public class MTItemModelProvider extends ItemModelProvider {
         withExistingParent("yellow_ipe_pressure_plate");
         withExistingParent("yellow_ipe_button", "_inventory");
 
+        standard(generated, "pink_ipe_sign");
+        standard(generated, "purple_ipe_sign");
+        standard(generated, "red_ipe_sign");
         standard(generated, "yellow_ipe_sign");
         standard(generated, "yellow_ipe_boat");
+        block(generated, "pink_ipe_sapling");
+        block(generated, "purple_ipe_sapling");
+        block(generated, "red_ipe_sapling");
         block(generated, "yellow_ipe_sapling");
     }
 

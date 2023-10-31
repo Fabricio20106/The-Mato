@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "side": "themato:block/red_ipe_planks",
+    "bottom": "themato:block/red_ipe_planks",
+    "top": "themato:block/red_ipe_planks"
+  }
+}

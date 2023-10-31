@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "planks",
+  "ingredients": [
+    {
+      "tag": "themato:red_ipe_logs"
+    }
+  ],
+  "result": {
+    "item": "themato:red_ipe_planks",
+    "count": 4
+  }
+}

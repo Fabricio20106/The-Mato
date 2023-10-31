@@ -1,6 +1,9 @@
 {
   "replace": false,
   "values": [
+    "themato:potted_pink_ipe_sapling",
+    "themato:potted_purple_ipe_sapling",
+    "themato:potted_red_ipe_sapling",
     "themato:potted_yellow_ipe_sapling"
   ]
 }
