@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "wooden_stairs",
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "themato:purple_ipe_planks"
+    }
+  },
+  "result": {
+    "item": "themato:purple_ipe_stairs",
+    "count": 6
+  }
+}

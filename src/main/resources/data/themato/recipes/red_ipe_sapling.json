@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "sapling",
+  "pattern": [
+    "#",
+    "C"
+  ],
+  "key": {
+    "#": {
+      "item": "themato:red_ipe_leaves"
+    },
+    "C": {
+      "tag": "forge:rods/wooden"
+    }
+  },
+  "result": {
+    "item": "themato:red_ipe_sapling"
+  }
+}

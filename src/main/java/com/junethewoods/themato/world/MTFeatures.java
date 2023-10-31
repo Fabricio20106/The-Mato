@@ -49,9 +49,8 @@ public class MTFeatures {
                     .ignoreVines().heightmap(Heightmap.Type.MOTION_BLOCKING).build()));
 
     public static final ConfiguredFeature<?, ?> YELLOW_IPE_TREES = register("yellow_ipe_trees", Feature.RANDOM_SELECTOR.configured(new MultipleRandomFeatureConfig(ImmutableList.of(
-                    PINK_IPE_TREE.weighted(0.25f), PURPLE_IPE_TREE.weighted(0.25f), RED_IPE_TREE.weighted(0.25f), YELLOW_IPE_TREE.weighted(
-                            0.25f)), YELLOW_IPE_TREE)).decorated(Features.Placements.HEIGHTMAP_SQUARE).decorated(Placement.COUNT_EXTRA.configured(
-                                    new AtSurfaceWithExtraConfig(7, 0.3f, 2))));
+                    PINK_IPE_TREE.weighted(0.25f), PURPLE_IPE_TREE.weighted(0.25f), RED_IPE_TREE.weighted(0.25f)), YELLOW_IPE_TREE)).decorated(
+                            Features.Placements.HEIGHTMAP_SQUARE).decorated(Placement.COUNT_EXTRA.configured(new AtSurfaceWithExtraConfig(7, 0.3f, 2))));
 
     public static <FC extends IFeatureConfig> ConfiguredFeature<FC, ?> register(String name, ConfiguredFeature<FC, ?> configuredFeature) {
         return Registry.register(WorldGenRegistries.CONFIGURED_FEATURE, TheMato.resourceLoc(name), configuredFeature);

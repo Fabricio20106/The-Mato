@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "bark",
+  "pattern": [
+    "##",
+    "##"
+  ],
+  "key": {
+    "#": {
+      "item": "themato:stripped_red_ipe_log"
+    }
+  },
+  "result": {
+    "item": "themato:stripped_red_ipe_wood",
+    "count": 3
+  }
+}
