@@ -7,6 +7,7 @@ import com.junethewoods.themato.block.MTBlocks;
 import com.junethewoods.themato.config.MTConfigs;
 import com.junethewoods.themato.item.MTItems;
 import com.junethewoods.themato.util.MTWoodTypes;
+import com.junethewoods.themato.world.stateprovider.MTStateProviders;
 import net.minecraft.block.Block;
 import net.minecraft.block.WoodType;
 import net.minecraft.item.AxeItem;
@@ -27,6 +28,7 @@ public class MTCommonProxy {
         MTBlocks.BLOCKS.register(eventBus);
         MTBlockEntities.BLOCK_ENTITIES.register(eventBus);
         MTBiomes.BIOMES.register(eventBus);
+        MTStateProviders.STATE_PROVIDERS.register(eventBus);
 
         eventBus.addListener(this::commonSetup);
     }

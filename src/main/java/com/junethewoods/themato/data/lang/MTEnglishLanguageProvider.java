@@ -82,10 +82,19 @@ public class MTEnglishLanguageProvider extends LanguageProvider {
         addBlock(MTBlocks.YELLOW_IPE_SIGN, "Yellow Ipe Sign");
         add("block.themato.yellow_ipe_wall_sign", "Yellow Ipe Wall Sign");
 
+        addBlock(MTBlocks.ROSE, "Rose");
+        addBlock(MTBlocks.CYAN_ROSE, "Cyan Rose");
+        addBlock(MTBlocks.PAEONIA, "Paeonia");
+        addBlock(MTBlocks.POTTED_ROSE, "Potted Rose");
+        addBlock(MTBlocks.POTTED_CYAN_ROSE, "Potted Cyan Rose");
+        addBlock(MTBlocks.POTTED_PAEONIA, "Potted Paeonia");
+
         add("itemGroup.themato_tab", "The Mato");
         add("biome.themato.ipe_forest", "Ipe Forest");
 
         add("configs.themato.ipeForestGeneration", "Ipe Forest Generation");
         add("configs.themato.ipeForestGeneration.tooltip", "Allow Ipe Forests to generate?");
+        add("configs.themato.matoFlowersGeneration", "The Mato Flower Generation");
+        add("configs.themato.matoFlowersGeneration.tooltip", "Allow flowers added by The Mato (roses, cyan roses and paeonias) to generate?");
     }
 }

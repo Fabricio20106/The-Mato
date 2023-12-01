@@ -20,7 +20,7 @@ public class MTBiomes {
         MobSpawnInfo.Builder spawns = new MobSpawnInfo.Builder().setPlayerCanSpawn();
         BiomeGenerationSettings.Builder settings = new BiomeGenerationSettings.Builder().surfaceBuilder(ConfiguredSurfaceBuilders.GRASS);
 
-        settings.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, MTFeatures.YELLOW_IPE_TREES);
+        settings.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, MTFeatures.IPE_TREES);
 
         addDefaultUndergroundVariety(settings);
         addJungleGrass(settings);

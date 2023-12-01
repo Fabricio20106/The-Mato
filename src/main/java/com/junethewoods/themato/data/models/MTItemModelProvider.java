@@ -87,6 +87,9 @@ public class MTItemModelProvider extends ItemModelProvider {
         block(generated, "purple_ipe_sapling");
         block(generated, "red_ipe_sapling");
         block(generated, "yellow_ipe_sapling");
+        block(generated, "rose");
+        block(generated, "cyan_rose");
+        block(generated, "paeonia");
     }
 
     public ItemModelBuilder standard(ModelFile parent, String name) {

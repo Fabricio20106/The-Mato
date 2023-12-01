@@ -77,4 +77,7 @@ public class MTItems {
     public static final RegistryObject<Item> PURPLE_IPE_SIGN = ITEMS.register("purple_ipe_sign", () -> new SignItem(new Item.Properties().stacksTo(16).tab(MTTab.TAB), MTBlocks.PURPLE_IPE_SIGN.get(), MTBlocks.PURPLE_IPE_WALL_SIGN.get()));
     public static final RegistryObject<Item> RED_IPE_SIGN = ITEMS.register("red_ipe_sign", () -> new SignItem(new Item.Properties().stacksTo(16).tab(MTTab.TAB), MTBlocks.RED_IPE_SIGN.get(), MTBlocks.RED_IPE_WALL_SIGN.get()));
     public static final RegistryObject<Item> YELLOW_IPE_SIGN = ITEMS.register("yellow_ipe_sign", () -> new SignItem(new Item.Properties().stacksTo(16).tab(MTTab.TAB), MTBlocks.YELLOW_IPE_SIGN.get(), MTBlocks.YELLOW_IPE_WALL_SIGN.get()));
+    public static final RegistryObject<Item> ROSE = ITEMS.register("rose", () -> new BlockItem(MTBlocks.ROSE.get(), new Item.Properties().tab(MTTab.TAB)));
+    public static final RegistryObject<Item> CYAN_ROSE = ITEMS.register("cyan_rose", () -> new BlockItem(MTBlocks.CYAN_ROSE.get(), new Item.Properties().tab(MTTab.TAB)));
+    public static final RegistryObject<Item> PAEONIA = ITEMS.register("paeonia", () -> new BlockItem(MTBlocks.PAEONIA.get(), new Item.Properties().tab(MTTab.TAB)));
 }

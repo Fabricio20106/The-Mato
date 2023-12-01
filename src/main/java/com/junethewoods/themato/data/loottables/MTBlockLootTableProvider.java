@@ -92,6 +92,13 @@ public class MTBlockLootTableProvider extends BlockLootTables {
         dropSelf(MTBlocks.YELLOW_IPE_PRESSURE_PLATE.get());
         dropSelf(MTBlocks.YELLOW_IPE_BUTTON.get());
         dropSelf(MTBlocks.YELLOW_IPE_SIGN.get());
+
+        dropSelf(MTBlocks.ROSE.get());
+        dropSelf(MTBlocks.CYAN_ROSE.get());
+        dropSelf(MTBlocks.PAEONIA.get());
+        dropPottedContents(MTBlocks.POTTED_ROSE.get());
+        dropPottedContents(MTBlocks.POTTED_CYAN_ROSE.get());
+        dropPottedContents(MTBlocks.POTTED_PAEONIA.get());
     }
 
     @Override

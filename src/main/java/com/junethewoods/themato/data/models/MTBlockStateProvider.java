@@ -85,5 +85,13 @@ public class MTBlockStateProvider extends BlockStateProvider {
         slabBlock((SlabBlock) MTBlocks.YELLOW_IPE_SLAB.get(), modLoc("block/yellow_ipe_planks"), modLoc("block/yellow_ipe_planks"));
         fenceBlock((FenceBlock) MTBlocks.YELLOW_IPE_FENCE.get(), modLoc("block/yellow_ipe_planks"));
         fenceGateBlock((FenceGateBlock) MTBlocks.YELLOW_IPE_FENCE_GATE.get(), modLoc("block/yellow_ipe_planks"));
+
+        // Plants
+        simpleBlock(MTBlocks.ROSE.get(), models().cross("rose", modLoc("block/rose")));
+        simpleBlock(MTBlocks.CYAN_ROSE.get(), models().cross("cyan_rose", modLoc("block/cyan_rose")));
+        simpleBlock(MTBlocks.PAEONIA.get(), models().cross("paeonia", modLoc("block/paeonia")));
+        simpleBlock(MTBlocks.POTTED_ROSE.get(), models().withExistingParent("potted_rose", mcLoc("block/flower_pot_cross")).texture("plant", "block/rose"));
+        simpleBlock(MTBlocks.POTTED_CYAN_ROSE.get(), models().withExistingParent("potted_cyan_rose", mcLoc("block/flower_pot_cross")).texture("plant", "block/cyan_rose"));
+        simpleBlock(MTBlocks.POTTED_PAEONIA.get(), models().withExistingParent("potted_paeonia", mcLoc("block/flower_pot_cross")).texture("plant", "block/paeonia"));
     }
 }

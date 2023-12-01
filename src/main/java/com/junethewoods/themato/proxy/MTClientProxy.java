@@ -34,6 +34,12 @@ public class MTClientProxy extends MTCommonProxy {
             RenderTypeLookup.setRenderLayer(MTBlocks.YELLOW_IPE_LEAVES.get(), RenderType.cutout());
             RenderTypeLookup.setRenderLayer(MTBlocks.YELLOW_IPE_SAPLING.get(), RenderType.cutout());
             RenderTypeLookup.setRenderLayer(MTBlocks.POTTED_YELLOW_IPE_SAPLING.get(), RenderType.cutout());
+            RenderTypeLookup.setRenderLayer(MTBlocks.ROSE.get(), RenderType.cutout());
+            RenderTypeLookup.setRenderLayer(MTBlocks.CYAN_ROSE.get(), RenderType.cutout());
+            RenderTypeLookup.setRenderLayer(MTBlocks.PAEONIA.get(), RenderType.cutout());
+            RenderTypeLookup.setRenderLayer(MTBlocks.POTTED_ROSE.get(), RenderType.cutout());
+            RenderTypeLookup.setRenderLayer(MTBlocks.POTTED_CYAN_ROSE.get(), RenderType.cutout());
+            RenderTypeLookup.setRenderLayer(MTBlocks.POTTED_PAEONIA.get(), RenderType.cutout());
 
             flammable(MTBlocks.PINK_IPE_LOG.get(), 5, 5);
             flammable(MTBlocks.PINK_IPE_WOOD.get(), 5, 5);
@@ -90,6 +96,10 @@ public class MTClientProxy extends MTCommonProxy {
             flammable(MTBlocks.YELLOW_IPE_WALL_SIGN.get(), 5, 20);
             flammable(MTBlocks.YELLOW_IPE_LEAVES.get(), 30, 60);
             flammable(MTBlocks.YELLOW_IPE_SAPLING.get(), 60, 100);
+
+            flammable(MTBlocks.ROSE.get(), 60, 100);
+            flammable(MTBlocks.CYAN_ROSE.get(), 60, 100);
+            flammable(MTBlocks.PAEONIA.get(), 60, 100);
 
             ClientRegistry.bindTileEntityRenderer(MTBlockEntities.MATO_SIGN.get(), SignTileEntityRenderer::new);
 

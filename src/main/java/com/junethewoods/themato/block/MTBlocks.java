@@ -9,6 +9,7 @@ import com.junethewoods.themato.world.tree.PurpleIpeTree;
 import com.junethewoods.themato.world.tree.RedIpeTree;
 import com.junethewoods.themato.world.tree.YellowIpeTree;
 import net.minecraft.block.*;
+import net.minecraft.potion.Effects;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -87,4 +88,12 @@ public class MTBlocks {
     public static final RegistryObject<Block> YELLOW_IPE_BUTTON = BLOCKS.register("yellow_ipe_button", () -> new WoodButtonBlock(AbstractBlock.Properties.copy(Blocks.OAK_BUTTON)));
     public static final RegistryObject<Block> YELLOW_IPE_SIGN = BLOCKS.register("yellow_ipe_sign", () -> new MTStandingSignBlock(AbstractBlock.Properties.copy(Blocks.OAK_SIGN), MTWoodTypes.YELLOW_IPE));
     public static final RegistryObject<Block> YELLOW_IPE_WALL_SIGN = BLOCKS.register("yellow_ipe_wall_sign", () -> new MTWallSignBlock(AbstractBlock.Properties.copy(Blocks.OAK_WALL_SIGN).lootFrom(MTBlocks.YELLOW_IPE_SIGN), MTWoodTypes.YELLOW_IPE));
+
+    // Plants
+    public static final RegistryObject<Block> ROSE = BLOCKS.register("rose", () -> new FlowerBlock(Effects.REGENERATION, 10, AbstractBlock.Properties.copy(Blocks.POPPY).sound(SoundType.CROP)));
+    public static final RegistryObject<Block> CYAN_ROSE = BLOCKS.register("cyan_rose", () -> new FlowerBlock(Effects.ABSORPTION, 6, AbstractBlock.Properties.copy(Blocks.POPPY).sound(SoundType.CROP)));
+    public static final RegistryObject<Block> PAEONIA = BLOCKS.register("paeonia", () -> new FlowerBlock(Effects.DIG_SPEED, 8, AbstractBlock.Properties.copy(Blocks.POPPY).sound(SoundType.CROP)));
+    public static final RegistryObject<Block> POTTED_ROSE = BLOCKS.register("potted_rose", () -> new FlowerPotBlock(MTBlocks.ROSE.get(), AbstractBlock.Properties.copy(Blocks.POTTED_POPPY)));
+    public static final RegistryObject<Block> POTTED_CYAN_ROSE = BLOCKS.register("potted_cyan_rose", () -> new FlowerPotBlock(MTBlocks.CYAN_ROSE.get(), AbstractBlock.Properties.copy(Blocks.POTTED_POPPY)));
+    public static final RegistryObject<Block> POTTED_PAEONIA = BLOCKS.register("potted_paeonia", () -> new FlowerPotBlock(MTBlocks.PAEONIA.get(), AbstractBlock.Properties.copy(Blocks.POTTED_POPPY)));
 }
