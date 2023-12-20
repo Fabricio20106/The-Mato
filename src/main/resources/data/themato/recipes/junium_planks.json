@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "planks",
+  "ingredients": [
+    {
+      "tag": "themato:junium_logs"
+    }
+  ],
+  "result": {
+    "item": "themato:junium_planks",
+    "count": 4
+  }
+}

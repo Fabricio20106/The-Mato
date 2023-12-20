@@ -21,8 +21,7 @@ import java.util.stream.Collectors;
 
 public class MTBlockLootTableProvider extends BlockLootTables {
     private static final float[] NORMAL_LEAVES_SAPLING_CHANCES = new float[] {0.05F, 0.0625F, 0.083333336F, 0.1F};
-    private static final ILootCondition.IBuilder HAS_SILK_TOUCH = MatchTool.toolMatches(ItemPredicate.Builder.item().hasEnchantment(new EnchantmentPredicate(Enchantments.SILK_TOUCH,
-            MinMaxBounds.IntBound.atLeast(1))));
+    private static final ILootCondition.IBuilder HAS_SILK_TOUCH = MatchTool.toolMatches(ItemPredicate.Builder.item().hasEnchantment(new EnchantmentPredicate(Enchantments.SILK_TOUCH, MinMaxBounds.IntBound.atLeast(1))));
     private static final ILootCondition.IBuilder HAS_SHEARS = MatchTool.toolMatches(ItemPredicate.Builder.item().of(Tags.Items.SHEARS));
     private static final ILootCondition.IBuilder HAS_SHEARS_OR_SILK_TOUCH = HAS_SHEARS.or(HAS_SILK_TOUCH);
     private static final ILootCondition.IBuilder HAS_NO_SHEARS_OR_SILK_TOUCH = HAS_SHEARS_OR_SILK_TOUCH.invert();
@@ -92,6 +91,32 @@ public class MTBlockLootTableProvider extends BlockLootTables {
         dropSelf(MTBlocks.YELLOW_IPE_PRESSURE_PLATE.get());
         dropSelf(MTBlocks.YELLOW_IPE_BUTTON.get());
         dropSelf(MTBlocks.YELLOW_IPE_SIGN.get());
+
+        dropSelf(MTBlocks.JUNIUM_LOG.get());
+        dropSelf(MTBlocks.JUNIUM_WOOD.get());
+        dropSelf(MTBlocks.STRIPPED_JUNIUM_LOG.get());
+        dropSelf(MTBlocks.STRIPPED_JUNIUM_WOOD.get());
+        add(MTBlocks.JUNIUM_LEAVES.get(), (func) -> createMTLeavesDrops(func, MTBlocks.JUNIUM_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+        dropSelf(MTBlocks.JUNIUM_SAPLING.get());
+        dropPottedContents(MTBlocks.POTTED_JUNIUM_SAPLING.get());
+        dropSelf(MTBlocks.JUNIUM_PLANKS.get());
+        dropSelf(MTBlocks.JUNIUM_STAIRS.get());
+        add(MTBlocks.JUNIUM_SLAB.get(), BlockLootTables::createSlabItemTable);
+        dropSelf(MTBlocks.JUNIUM_FENCE.get());
+        dropSelf(MTBlocks.JUNIUM_FENCE_GATE.get());
+        dropSelf(MTBlocks.JUNIUM_PRESSURE_PLATE.get());
+        dropSelf(MTBlocks.JUNIUM_BUTTON.get());
+        dropSelf(MTBlocks.JUNIUM_SIGN.get());
+
+        dropSelf(MTBlocks.STRIPPED_CACTUS.get());
+        dropSelf(MTBlocks.CACTUS_PLANKS.get());
+        dropSelf(MTBlocks.CACTUS_STAIRS.get());
+        add(MTBlocks.CACTUS_SLAB.get(), BlockLootTables::createSlabItemTable);
+        dropSelf(MTBlocks.CACTUS_FENCE.get());
+        dropSelf(MTBlocks.CACTUS_FENCE_GATE.get());
+        dropSelf(MTBlocks.CACTUS_PRESSURE_PLATE.get());
+        dropSelf(MTBlocks.CACTUS_BUTTON.get());
+        dropSelf(MTBlocks.CACTUS_SIGN.get());
 
         dropSelf(MTBlocks.ROSE.get());
         dropSelf(MTBlocks.CYAN_ROSE.get());

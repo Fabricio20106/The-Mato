@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=top": {
+      "model": "themato:block/cactus_slab_top"
+    },
+    "type=bottom": {
+      "model": "themato:block/cactus_slab"
+    },
+    "type=double": {
+      "model": "themato:block/cactus_planks"
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=top": {
+      "model": "themato:block/junium_slab_top"
+    },
+    "type=bottom": {
+      "model": "themato:block/junium_slab"
+    },
+    "type=double": {
+      "model": "themato:block/junium_planks"
+    }
+  }
+}

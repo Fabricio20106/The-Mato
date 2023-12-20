@@ -2,6 +2,7 @@ package com.junethewoods.themato.data.lang;
 
 import com.junethewoods.themato.TheMato;
 import com.junethewoods.themato.block.MTBlocks;
+import com.junethewoods.themato.item.MTItems;
 import net.minecraft.data.DataGenerator;
 import net.minecraftforge.common.data.LanguageProvider;
 
@@ -82,6 +83,34 @@ public class MTEnglishLanguageProvider extends LanguageProvider {
         addBlock(MTBlocks.YELLOW_IPE_SIGN, "Yellow Ipe Sign");
         add("block.themato.yellow_ipe_wall_sign", "Yellow Ipe Wall Sign");
 
+        addBlock(MTBlocks.JUNIUM_LOG, "Junium Log");
+        addBlock(MTBlocks.JUNIUM_WOOD, "Junium Wood");
+        addBlock(MTBlocks.STRIPPED_JUNIUM_LOG, "Stripped Junium Log");
+        addBlock(MTBlocks.STRIPPED_JUNIUM_WOOD, "Stripped Junium Wood");
+        addBlock(MTBlocks.JUNIUM_LEAVES, "Junium Leaves");
+        addBlock(MTBlocks.JUNIUM_SAPLING, "Junium Sapling");
+        addBlock(MTBlocks.POTTED_JUNIUM_SAPLING, "Potted Junium Sapling");
+        addBlock(MTBlocks.JUNIUM_PLANKS, "Junium Planks");
+        addBlock(MTBlocks.JUNIUM_STAIRS, "Junium Stairs");
+        addBlock(MTBlocks.JUNIUM_SLAB, "Junium Slab");
+        addBlock(MTBlocks.JUNIUM_FENCE, "Junium Fence");
+        addBlock(MTBlocks.JUNIUM_FENCE_GATE, "Junium Fence Gate");
+        addBlock(MTBlocks.JUNIUM_PRESSURE_PLATE, "Junium Pressure Plate");
+        addBlock(MTBlocks.JUNIUM_BUTTON, "Junium Button");
+        addBlock(MTBlocks.JUNIUM_SIGN, "Junium Sign");
+        add("block.themato.junium_wall_sign", "Junium Wall Sign");
+
+        addBlock(MTBlocks.STRIPPED_CACTUS, "Stripped Cactus");
+        addBlock(MTBlocks.CACTUS_PLANKS, "Cactus Planks");
+        addBlock(MTBlocks.CACTUS_STAIRS, "Cactus Stairs");
+        addBlock(MTBlocks.CACTUS_SLAB, "Cactus Slab");
+        addBlock(MTBlocks.CACTUS_FENCE, "Cactus Fence");
+        addBlock(MTBlocks.CACTUS_FENCE_GATE, "Cactus Fence Gate");
+        addBlock(MTBlocks.CACTUS_PRESSURE_PLATE, "Cactus Pressure Plate");
+        addBlock(MTBlocks.CACTUS_BUTTON, "Cactus Button");
+        addBlock(MTBlocks.CACTUS_SIGN, "Cactus Sign");
+        add("block.themato.cactus_wall_sign", "Cactus Wall Sign");
+
         addBlock(MTBlocks.ROSE, "Rose");
         addBlock(MTBlocks.CYAN_ROSE, "Cyan Rose");
         addBlock(MTBlocks.PAEONIA, "Paeonia");
@@ -89,11 +118,17 @@ public class MTEnglishLanguageProvider extends LanguageProvider {
         addBlock(MTBlocks.POTTED_CYAN_ROSE, "Potted Cyan Rose");
         addBlock(MTBlocks.POTTED_PAEONIA, "Potted Paeonia");
 
+        addItem(MTItems.LIQUID_CACTUS_BUCKET, "Liquid Cactus Bucket");
+        addItem(MTItems.CACTUS_CANDY, "Cactus Candy");
+
         add("itemGroup.themato_tab", "The Mato");
         add("biome.themato.ipe_forest", "Ipe Forest");
+        add("biome.themato.the_woods", "The Woods");
 
         add("configs.themato.ipeForestGeneration", "Ipe Forest Generation");
         add("configs.themato.ipeForestGeneration.tooltip", "Allow Ipe Forests to generate?");
+        add("configs.themato.theWoodsGeneration", "The Woods Generation");
+        add("configs.themato.theWoodsGeneration.tooltip", "Allow The Woods (biome) to generate?");
         add("configs.themato.matoFlowersGeneration", "The Mato Flower Generation");
         add("configs.themato.matoFlowersGeneration.tooltip", "Allow flowers added by The Mato (roses, cyan roses and paeonias) to generate?");
     }

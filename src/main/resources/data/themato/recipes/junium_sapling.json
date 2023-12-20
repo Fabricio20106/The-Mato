@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "sapling",
+  "pattern": [
+    "#",
+    "C"
+  ],
+  "key": {
+    "#": {
+      "item": "themato:junium_leaves"
+    },
+    "C": {
+      "tag": "forge:rods/wooden"
+    }
+  },
+  "result": {
+    "item": "themato:junium_sapling"
+  }
+}

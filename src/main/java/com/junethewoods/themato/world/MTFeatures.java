@@ -10,10 +10,12 @@ import net.minecraft.world.gen.Heightmap;
 import net.minecraft.world.gen.blockplacer.SimpleBlockPlacer;
 import net.minecraft.world.gen.blockstateprovider.SimpleBlockStateProvider;
 import net.minecraft.world.gen.feature.*;
+import net.minecraft.world.gen.foliageplacer.DarkOakFoliagePlacer;
 import net.minecraft.world.gen.foliageplacer.FancyFoliagePlacer;
 import net.minecraft.world.gen.placement.AtSurfaceWithExtraConfig;
 import net.minecraft.world.gen.placement.NoiseDependant;
 import net.minecraft.world.gen.placement.Placement;
+import net.minecraft.world.gen.trunkplacer.DarkOakTrunkPlacer;
 import net.minecraft.world.gen.trunkplacer.FancyTrunkPlacer;
 
 import java.util.OptionalInt;
@@ -55,6 +57,18 @@ public class MTFeatures {
     public static final ConfiguredFeature<?, ?> IPE_TREES = register("ipe_trees", Feature.RANDOM_SELECTOR.configured(new MultipleRandomFeatureConfig(ImmutableList.of(
                     PINK_IPE_TREE.weighted(0.25f), PURPLE_IPE_TREE.weighted(0.25f), RED_IPE_TREE.weighted(0.25f)), YELLOW_IPE_TREE)).decorated(
                             Features.Placements.HEIGHTMAP_SQUARE).decorated(Placement.COUNT_EXTRA.configured(new AtSurfaceWithExtraConfig(7, 0.3f, 2))));
+
+    public static final ConfiguredFeature<BaseTreeFeatureConfig, ?> JUNIUM_TREE = register("junium_tree",
+            Feature.TREE.configured(new BaseTreeFeatureConfig.Builder(new SimpleBlockStateProvider(MTBlocks.JUNIUM_LOG.get().defaultBlockState()),
+                    new SimpleBlockStateProvider(MTBlocks.JUNIUM_LEAVES.get().defaultBlockState()),
+                    new DarkOakFoliagePlacer(FeatureSpread.fixed(0), FeatureSpread.fixed(0)),
+                    new DarkOakTrunkPlacer(6, 2, 1),
+                    new ThreeLayerFeature(1, 1, 0, 1, 2, OptionalInt.empty()))
+                    .maxWaterDepth(Integer.MAX_VALUE).ignoreVines().heightmap(Heightmap.Type.MOTION_BLOCKING).build()));
+
+    public static final ConfiguredFeature<?, ?> JUNIUM_TREES = register("junium_trees", Feature.RANDOM_SELECTOR.configured(new MultipleRandomFeatureConfig(ImmutableList.of(
+            JUNIUM_TREE.weighted(0.667f)), JUNIUM_TREE)).decorated(
+            Features.Placements.HEIGHTMAP_SQUARE).decorated(Placement.COUNT_EXTRA.configured(new AtSurfaceWithExtraConfig(7, 0.3f, 2))));
 
     private static final ImmutableList<Supplier<ConfiguredFeature<?, ?>>> MATO_FLOWERS_LIST = ImmutableList.of(
             () -> Feature.RANDOM_PATCH.configured(new BlockClusterFeatureConfig.Builder(new SimpleBlockStateProvider(MTBlocks.ROSE.get().defaultBlockState()), new SimpleBlockPlacer()).tries(64).noProjection().build()),

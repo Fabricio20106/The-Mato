@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "themato:stripped_cactus"
+  },
+  "result": "minecraft:lime_dye",
+  "experience": 0.15,
+  "cookingtime": 200
+}

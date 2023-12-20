@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "themato:liquid_cactus_bucket"
+    }
+  ],
+  "result": {
+    "item": "themato:cactus_candy"
+  }
+}

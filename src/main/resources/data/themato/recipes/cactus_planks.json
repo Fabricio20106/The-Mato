@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "planks",
+  "ingredients": [
+    {
+      "item": "themato:stripped_cactus"
+    }
+  ],
+  "result": {
+    "item": "themato:cactus_planks",
+    "count": 2
+  }
+}

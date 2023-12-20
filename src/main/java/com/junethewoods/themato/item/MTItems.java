@@ -2,9 +2,12 @@ package com.junethewoods.themato.item;
 
 import com.junethewoods.themato.TheMato;
 import com.junethewoods.themato.block.MTBlocks;
+import com.junethewoods.themato.item.custom.LiquidCactusBucketItem;
+import com.junethewoods.themato.item.custom.MTFoods;
 import com.junethewoods.themato.util.MTTab;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
+import net.minecraft.item.Items;
 import net.minecraft.item.SignItem;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
@@ -73,11 +76,42 @@ public class MTItems {
     public static final RegistryObject<Item> YELLOW_IPE_PRESSURE_PLATE = ITEMS.register("yellow_ipe_pressure_plate", () -> new BlockItem(MTBlocks.YELLOW_IPE_PRESSURE_PLATE.get(), new Item.Properties().tab(MTTab.TAB)));
     public static final RegistryObject<Item> YELLOW_IPE_BUTTON = ITEMS.register("yellow_ipe_button", () -> new BlockItem(MTBlocks.YELLOW_IPE_BUTTON.get(), new Item.Properties().tab(MTTab.TAB)));
 
+    // Junium
+    public static final RegistryObject<Item> JUNIUM_LOG = ITEMS.register("junium_log", () -> new BlockItem(MTBlocks.JUNIUM_LOG.get(), new Item.Properties().tab(MTTab.TAB)));
+    public static final RegistryObject<Item> JUNIUM_WOOD = ITEMS.register("junium_wood", () -> new BlockItem(MTBlocks.JUNIUM_WOOD.get(), new Item.Properties().tab(MTTab.TAB)));
+    public static final RegistryObject<Item> STRIPPED_JUNIUM_LOG = ITEMS.register("stripped_junium_log", () -> new BlockItem(MTBlocks.STRIPPED_JUNIUM_LOG.get(), new Item.Properties().tab(MTTab.TAB)));
+    public static final RegistryObject<Item> STRIPPED_JUNIUM_WOOD = ITEMS.register("stripped_junium_wood", () -> new BlockItem(MTBlocks.STRIPPED_JUNIUM_WOOD.get(), new Item.Properties().tab(MTTab.TAB)));
+    public static final RegistryObject<Item> JUNIUM_LEAVES = ITEMS.register("junium_leaves", () -> new BlockItem(MTBlocks.JUNIUM_LEAVES.get(), new Item.Properties().tab(MTTab.TAB)));
+    public static final RegistryObject<Item> JUNIUM_SAPLING = ITEMS.register("junium_sapling", () -> new BlockItem(MTBlocks.JUNIUM_SAPLING.get(), new Item.Properties().tab(MTTab.TAB)));
+    public static final RegistryObject<Item> JUNIUM_PLANKS = ITEMS.register("junium_planks", () -> new BlockItem(MTBlocks.JUNIUM_PLANKS.get(), new Item.Properties().tab(MTTab.TAB)));
+    public static final RegistryObject<Item> JUNIUM_STAIRS = ITEMS.register("junium_stairs", () -> new BlockItem(MTBlocks.JUNIUM_STAIRS.get(), new Item.Properties().tab(MTTab.TAB)));
+    public static final RegistryObject<Item> JUNIUM_SLAB = ITEMS.register("junium_slab", () -> new BlockItem(MTBlocks.JUNIUM_SLAB.get(), new Item.Properties().tab(MTTab.TAB)));
+    public static final RegistryObject<Item> JUNIUM_FENCE = ITEMS.register("junium_fence", () -> new BlockItem(MTBlocks.JUNIUM_FENCE.get(), new Item.Properties().tab(MTTab.TAB)));
+    public static final RegistryObject<Item> JUNIUM_FENCE_GATE = ITEMS.register("junium_fence_gate", () -> new BlockItem(MTBlocks.JUNIUM_FENCE_GATE.get(), new Item.Properties().tab(MTTab.TAB)));
+    public static final RegistryObject<Item> JUNIUM_PRESSURE_PLATE = ITEMS.register("junium_pressure_plate", () -> new BlockItem(MTBlocks.JUNIUM_PRESSURE_PLATE.get(), new Item.Properties().tab(MTTab.TAB)));
+    public static final RegistryObject<Item> JUNIUM_BUTTON = ITEMS.register("junium_button", () -> new BlockItem(MTBlocks.JUNIUM_BUTTON.get(), new Item.Properties().tab(MTTab.TAB)));
+
+    // Cactus Wood
+    public static final RegistryObject<Item> STRIPPED_CACTUS = ITEMS.register("stripped_cactus", () -> new BlockItem(MTBlocks.STRIPPED_CACTUS.get(), new Item.Properties().tab(MTTab.TAB)));
+    public static final RegistryObject<Item> CACTUS_PLANKS = ITEMS.register("cactus_planks", () -> new BlockItem(MTBlocks.CACTUS_PLANKS.get(), new Item.Properties().tab(MTTab.TAB)));
+    public static final RegistryObject<Item> CACTUS_STAIRS = ITEMS.register("cactus_stairs", () -> new BlockItem(MTBlocks.CACTUS_STAIRS.get(), new Item.Properties().tab(MTTab.TAB)));
+    public static final RegistryObject<Item> CACTUS_SLAB = ITEMS.register("cactus_slab", () -> new BlockItem(MTBlocks.CACTUS_SLAB.get(), new Item.Properties().tab(MTTab.TAB)));
+    public static final RegistryObject<Item> CACTUS_FENCE = ITEMS.register("cactus_fence", () -> new BlockItem(MTBlocks.CACTUS_FENCE.get(), new Item.Properties().tab(MTTab.TAB)));
+    public static final RegistryObject<Item> CACTUS_FENCE_GATE = ITEMS.register("cactus_fence_gate", () -> new BlockItem(MTBlocks.CACTUS_FENCE_GATE.get(), new Item.Properties().tab(MTTab.TAB)));
+    public static final RegistryObject<Item> CACTUS_PRESSURE_PLATE = ITEMS.register("cactus_pressure_plate", () -> new BlockItem(MTBlocks.CACTUS_PRESSURE_PLATE.get(), new Item.Properties().tab(MTTab.TAB)));
+    public static final RegistryObject<Item> CACTUS_BUTTON = ITEMS.register("cactus_button", () -> new BlockItem(MTBlocks.CACTUS_BUTTON.get(), new Item.Properties().tab(MTTab.TAB)));
+
     public static final RegistryObject<Item> PINK_IPE_SIGN = ITEMS.register("pink_ipe_sign", () -> new SignItem(new Item.Properties().stacksTo(16).tab(MTTab.TAB), MTBlocks.PINK_IPE_SIGN.get(), MTBlocks.PINK_IPE_WALL_SIGN.get()));
     public static final RegistryObject<Item> PURPLE_IPE_SIGN = ITEMS.register("purple_ipe_sign", () -> new SignItem(new Item.Properties().stacksTo(16).tab(MTTab.TAB), MTBlocks.PURPLE_IPE_SIGN.get(), MTBlocks.PURPLE_IPE_WALL_SIGN.get()));
     public static final RegistryObject<Item> RED_IPE_SIGN = ITEMS.register("red_ipe_sign", () -> new SignItem(new Item.Properties().stacksTo(16).tab(MTTab.TAB), MTBlocks.RED_IPE_SIGN.get(), MTBlocks.RED_IPE_WALL_SIGN.get()));
     public static final RegistryObject<Item> YELLOW_IPE_SIGN = ITEMS.register("yellow_ipe_sign", () -> new SignItem(new Item.Properties().stacksTo(16).tab(MTTab.TAB), MTBlocks.YELLOW_IPE_SIGN.get(), MTBlocks.YELLOW_IPE_WALL_SIGN.get()));
+    public static final RegistryObject<Item> JUNIUM_SIGN = ITEMS.register("junium_sign", () -> new SignItem(new Item.Properties().stacksTo(16).tab(MTTab.TAB), MTBlocks.JUNIUM_SIGN.get(), MTBlocks.JUNIUM_WALL_SIGN.get()));
+    public static final RegistryObject<Item> CACTUS_SIGN = ITEMS.register("cactus_sign", () -> new SignItem(new Item.Properties().stacksTo(16).tab(MTTab.TAB), MTBlocks.CACTUS_SIGN.get(), MTBlocks.CACTUS_WALL_SIGN.get()));
     public static final RegistryObject<Item> ROSE = ITEMS.register("rose", () -> new BlockItem(MTBlocks.ROSE.get(), new Item.Properties().tab(MTTab.TAB)));
     public static final RegistryObject<Item> CYAN_ROSE = ITEMS.register("cyan_rose", () -> new BlockItem(MTBlocks.CYAN_ROSE.get(), new Item.Properties().tab(MTTab.TAB)));
     public static final RegistryObject<Item> PAEONIA = ITEMS.register("paeonia", () -> new BlockItem(MTBlocks.PAEONIA.get(), new Item.Properties().tab(MTTab.TAB)));
+
+    // Actual Items
+    public static final RegistryObject<Item> LIQUID_CACTUS_BUCKET = ITEMS.register("liquid_cactus_bucket", () -> new LiquidCactusBucketItem(new Item.Properties().stacksTo(1).craftRemainder(Items.BUCKET).tab(MTTab.TAB)));
+    public static final RegistryObject<Item> CACTUS_CANDY = ITEMS.register("cactus_candy", () -> new Item(new Item.Properties().food(MTFoods.CACTUS_CANDY).tab(MTTab.TAB)));
 }

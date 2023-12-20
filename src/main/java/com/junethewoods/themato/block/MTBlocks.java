@@ -3,12 +3,11 @@ package com.junethewoods.themato.block;
 import com.junethewoods.themato.TheMato;
 import com.junethewoods.themato.block.custom.MTStandingSignBlock;
 import com.junethewoods.themato.block.custom.MTWallSignBlock;
+import com.junethewoods.themato.block.custom.StrippedCactusBlock;
 import com.junethewoods.themato.util.MTWoodTypes;
-import com.junethewoods.themato.world.tree.PinkIpeTree;
-import com.junethewoods.themato.world.tree.PurpleIpeTree;
-import com.junethewoods.themato.world.tree.RedIpeTree;
-import com.junethewoods.themato.world.tree.YellowIpeTree;
+import com.junethewoods.themato.world.tree.*;
 import net.minecraft.block.*;
+import net.minecraft.block.material.Material;
 import net.minecraft.potion.Effects;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
@@ -88,6 +87,36 @@ public class MTBlocks {
     public static final RegistryObject<Block> YELLOW_IPE_BUTTON = BLOCKS.register("yellow_ipe_button", () -> new WoodButtonBlock(AbstractBlock.Properties.copy(Blocks.OAK_BUTTON)));
     public static final RegistryObject<Block> YELLOW_IPE_SIGN = BLOCKS.register("yellow_ipe_sign", () -> new MTStandingSignBlock(AbstractBlock.Properties.copy(Blocks.OAK_SIGN), MTWoodTypes.YELLOW_IPE));
     public static final RegistryObject<Block> YELLOW_IPE_WALL_SIGN = BLOCKS.register("yellow_ipe_wall_sign", () -> new MTWallSignBlock(AbstractBlock.Properties.copy(Blocks.OAK_WALL_SIGN).lootFrom(MTBlocks.YELLOW_IPE_SIGN), MTWoodTypes.YELLOW_IPE));
+
+    // Junium
+    public static final RegistryObject<Block> JUNIUM_LOG = BLOCKS.register("junium_log", () -> new RotatedPillarBlock(AbstractBlock.Properties.copy(Blocks.DARK_OAK_LOG)));
+    public static final RegistryObject<Block> JUNIUM_WOOD = BLOCKS.register("junium_wood", () -> new RotatedPillarBlock(AbstractBlock.Properties.copy(Blocks.DARK_OAK_WOOD)));
+    public static final RegistryObject<Block> STRIPPED_JUNIUM_LOG = BLOCKS.register("stripped_junium_log", () -> new RotatedPillarBlock(AbstractBlock.Properties.copy(Blocks.STRIPPED_DARK_OAK_LOG)));
+    public static final RegistryObject<Block> STRIPPED_JUNIUM_WOOD = BLOCKS.register("stripped_junium_wood", () -> new RotatedPillarBlock(AbstractBlock.Properties.copy(Blocks.STRIPPED_DARK_OAK_WOOD)));
+    public static final RegistryObject<Block> JUNIUM_LEAVES = BLOCKS.register("junium_leaves", () -> new LeavesBlock(AbstractBlock.Properties.copy(Blocks.DARK_OAK_LEAVES)));
+    public static final RegistryObject<Block> JUNIUM_SAPLING = BLOCKS.register("junium_sapling", () -> new SaplingBlock(new JuniumTree(), AbstractBlock.Properties.copy(Blocks.DARK_OAK_SAPLING)));
+    public static final RegistryObject<Block> POTTED_JUNIUM_SAPLING = BLOCKS.register("potted_junium_sapling", () -> new FlowerPotBlock(MTBlocks.JUNIUM_SAPLING.get(), AbstractBlock.Properties.copy(Blocks.POTTED_DARK_OAK_SAPLING)));
+    public static final RegistryObject<Block> JUNIUM_PLANKS = BLOCKS.register("junium_planks", () -> new Block(AbstractBlock.Properties.copy(Blocks.DARK_OAK_PLANKS)));
+    public static final RegistryObject<Block> JUNIUM_STAIRS = BLOCKS.register("junium_stairs", () -> new StairsBlock(() -> MTBlocks.JUNIUM_PLANKS.get().defaultBlockState(), AbstractBlock.Properties.copy(Blocks.DARK_OAK_STAIRS)));
+    public static final RegistryObject<Block> JUNIUM_SLAB = BLOCKS.register("junium_slab", () -> new SlabBlock(AbstractBlock.Properties.copy(Blocks.DARK_OAK_SLAB)));
+    public static final RegistryObject<Block> JUNIUM_FENCE = BLOCKS.register("junium_fence", () -> new FenceBlock(AbstractBlock.Properties.copy(Blocks.DARK_OAK_FENCE)));
+    public static final RegistryObject<Block> JUNIUM_FENCE_GATE = BLOCKS.register("junium_fence_gate", () -> new FenceGateBlock(AbstractBlock.Properties.copy(Blocks.DARK_OAK_FENCE_GATE)));
+    public static final RegistryObject<Block> JUNIUM_PRESSURE_PLATE = BLOCKS.register("junium_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, AbstractBlock.Properties.copy(Blocks.DARK_OAK_PRESSURE_PLATE)));
+    public static final RegistryObject<Block> JUNIUM_BUTTON = BLOCKS.register("junium_button", () -> new WoodButtonBlock(AbstractBlock.Properties.copy(Blocks.DARK_OAK_BUTTON)));
+    public static final RegistryObject<Block> JUNIUM_SIGN = BLOCKS.register("junium_sign", () -> new MTStandingSignBlock(AbstractBlock.Properties.copy(Blocks.DARK_OAK_SIGN), MTWoodTypes.JUNIUM));
+    public static final RegistryObject<Block> JUNIUM_WALL_SIGN = BLOCKS.register("junium_wall_sign", () -> new MTWallSignBlock(AbstractBlock.Properties.copy(Blocks.DARK_OAK_WALL_SIGN).lootFrom(MTBlocks.JUNIUM_SIGN), MTWoodTypes.JUNIUM));
+
+    // Cactus Wood
+    public static final RegistryObject<Block> STRIPPED_CACTUS = BLOCKS.register("stripped_cactus", () -> new StrippedCactusBlock(AbstractBlock.Properties.of(Material.CACTUS).strength(0.4F).sound(SoundType.WOOL)));
+    public static final RegistryObject<Block> CACTUS_PLANKS = BLOCKS.register("cactus_planks", () -> new Block(AbstractBlock.Properties.copy(Blocks.OAK_PLANKS)));
+    public static final RegistryObject<Block> CACTUS_STAIRS = BLOCKS.register("cactus_stairs", () -> new StairsBlock(() -> MTBlocks.CACTUS_PLANKS.get().defaultBlockState(), AbstractBlock.Properties.copy(Blocks.OAK_STAIRS)));
+    public static final RegistryObject<Block> CACTUS_SLAB = BLOCKS.register("cactus_slab", () -> new SlabBlock(AbstractBlock.Properties.copy(Blocks.OAK_SLAB)));
+    public static final RegistryObject<Block> CACTUS_FENCE = BLOCKS.register("cactus_fence", () -> new FenceBlock(AbstractBlock.Properties.copy(Blocks.OAK_FENCE)));
+    public static final RegistryObject<Block> CACTUS_FENCE_GATE = BLOCKS.register("cactus_fence_gate", () -> new FenceGateBlock(AbstractBlock.Properties.copy(Blocks.OAK_FENCE_GATE)));
+    public static final RegistryObject<Block> CACTUS_PRESSURE_PLATE = BLOCKS.register("cactus_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, AbstractBlock.Properties.copy(Blocks.OAK_PRESSURE_PLATE)));
+    public static final RegistryObject<Block> CACTUS_BUTTON = BLOCKS.register("cactus_button", () -> new WoodButtonBlock(AbstractBlock.Properties.copy(Blocks.OAK_BUTTON)));
+    public static final RegistryObject<Block> CACTUS_SIGN = BLOCKS.register("cactus_sign", () -> new MTStandingSignBlock(AbstractBlock.Properties.copy(Blocks.OAK_SIGN), MTWoodTypes.CACTUS));
+    public static final RegistryObject<Block> CACTUS_WALL_SIGN = BLOCKS.register("cactus_wall_sign", () -> new MTWallSignBlock(AbstractBlock.Properties.copy(Blocks.OAK_WALL_SIGN).lootFrom(MTBlocks.CACTUS_SIGN), MTWoodTypes.CACTUS));
 
     // Plants
     public static final RegistryObject<Block> ROSE = BLOCKS.register("rose", () -> new FlowerBlock(Effects.REGENERATION, 10, AbstractBlock.Properties.copy(Blocks.POPPY).sound(SoundType.CROP)));

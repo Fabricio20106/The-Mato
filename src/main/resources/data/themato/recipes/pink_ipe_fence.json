@@ -10,11 +10,11 @@
       "tag": "forge:rods/wooden"
     },
     "W": {
-      "item": "themato:fence_ipe_planks"
+      "item": "themato:pink_ipe_planks"
     }
   },
   "result": {
-    "item": "themato:fence_ipe_fence",
+    "item": "themato:pink_ipe_fence",
     "count": 3
   }
 }

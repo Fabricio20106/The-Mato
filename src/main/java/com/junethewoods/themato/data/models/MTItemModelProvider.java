@@ -78,15 +78,43 @@ public class MTItemModelProvider extends ItemModelProvider {
         withExistingParent("yellow_ipe_pressure_plate");
         withExistingParent("yellow_ipe_button", "_inventory");
 
+        withExistingParent("junium_log");
+        withExistingParent("junium_wood");
+        withExistingParent("stripped_junium_log");
+        withExistingParent("stripped_junium_wood");
+        withExistingParent("junium_leaves");
+        withExistingParent("junium_planks");
+        withExistingParent("junium_stairs");
+        withExistingParent("junium_slab");
+        withExistingParent("junium_fence", "_inventory");
+        withExistingParent("junium_fence_gate");
+        withExistingParent("junium_pressure_plate");
+        withExistingParent("junium_button", "_inventory");
+
+        withExistingParent("stripped_cactus");
+        withExistingParent("cactus_planks");
+        withExistingParent("cactus_stairs");
+        withExistingParent("cactus_slab");
+        withExistingParent("cactus_fence", "_inventory");
+        withExistingParent("cactus_fence_gate");
+        withExistingParent("cactus_pressure_plate");
+        withExistingParent("cactus_button", "_inventory");
+
         standard(generated, "pink_ipe_sign");
         standard(generated, "purple_ipe_sign");
         standard(generated, "red_ipe_sign");
         standard(generated, "yellow_ipe_sign");
+        standard(generated, "junium_sign");
+        standard(generated, "cactus_sign");
         standard(generated, "yellow_ipe_boat");
+        standard(generated, "liquid_cactus_bucket");
+        standard(generated, "cactus_candy");
+
         block(generated, "pink_ipe_sapling");
         block(generated, "purple_ipe_sapling");
         block(generated, "red_ipe_sapling");
         block(generated, "yellow_ipe_sapling");
+        block(generated, "junium_sapling");
         block(generated, "rose");
         block(generated, "cyan_rose");
         block(generated, "paeonia");

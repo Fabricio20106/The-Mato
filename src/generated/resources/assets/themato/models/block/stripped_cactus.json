@@ -1,0 +1,8 @@
+{
+  "parent": "themato:block/template_cactus",
+  "textures": {
+    "bottom": "themato:block/stripped_cactus_bottom",
+    "side": "themato:block/stripped_cactus_side",
+    "top": "themato:block/stripped_cactus_top"
+  }
+}

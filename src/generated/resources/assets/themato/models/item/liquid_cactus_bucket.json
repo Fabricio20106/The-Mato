@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "themato:item/liquid_cactus_bucket"
+  }
+}

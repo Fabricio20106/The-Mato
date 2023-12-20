@@ -9,6 +9,7 @@ import com.junethewoods.themato.item.MTItems;
 import com.junethewoods.themato.util.MTWoodTypes;
 import com.junethewoods.themato.world.stateprovider.MTStateProviders;
 import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
 import net.minecraft.block.WoodType;
 import net.minecraft.item.AxeItem;
 import net.minecraft.util.RegistryKey;
@@ -43,19 +44,28 @@ public class MTCommonProxy {
                     .put(MTBlocks.RED_IPE_LOG.get(), MTBlocks.STRIPPED_RED_IPE_LOG.get())
                     .put(MTBlocks.RED_IPE_WOOD.get(), MTBlocks.STRIPPED_RED_IPE_WOOD.get())
                     .put(MTBlocks.YELLOW_IPE_LOG.get(), MTBlocks.STRIPPED_YELLOW_IPE_LOG.get())
-                    .put(MTBlocks.YELLOW_IPE_WOOD.get(), MTBlocks.STRIPPED_YELLOW_IPE_WOOD.get()).build();
+                    .put(MTBlocks.YELLOW_IPE_WOOD.get(), MTBlocks.STRIPPED_YELLOW_IPE_WOOD.get())
+                    .put(MTBlocks.JUNIUM_LOG.get(), MTBlocks.STRIPPED_JUNIUM_LOG.get())
+                    .put(MTBlocks.JUNIUM_WOOD.get(), MTBlocks.STRIPPED_JUNIUM_WOOD.get()).build();
 
             RegistryKey<Biome> ipeForestKey = RegistryKey.create(ForgeRegistries.Keys.BIOMES, MTBiomes.IPE_FOREST.getId());
+            RegistryKey<Biome> theWoodsKey = RegistryKey.create(ForgeRegistries.Keys.BIOMES, MTBiomes.THE_WOODS.getId());
 
             if (MTConfigs.COMMON_CONFIGS.ipeForestGeneration.get()) {
                 BiomeDictionary.addTypes(ipeForestKey, BiomeDictionary.Type.FOREST, BiomeDictionary.Type.OVERWORLD);
-                BiomeManager.addBiome(BiomeManager.BiomeType.COOL, new BiomeManager.BiomeEntry(ipeForestKey, 15));
+                BiomeManager.addBiome(BiomeManager.BiomeType.COOL, new BiomeManager.BiomeEntry(ipeForestKey, 20));
+            }
+            if (MTConfigs.COMMON_CONFIGS.theWoodsGeneration.get()) {
+                BiomeDictionary.addTypes(theWoodsKey, BiomeDictionary.Type.FOREST, BiomeDictionary.Type.OVERWORLD);
+                BiomeManager.addBiome(BiomeManager.BiomeType.COOL, new BiomeManager.BiomeEntry(theWoodsKey, 15));
             }
 
             WoodType.register(MTWoodTypes.PINK_IPE);
             WoodType.register(MTWoodTypes.PURPLE_IPE);
             WoodType.register(MTWoodTypes.RED_IPE);
             WoodType.register(MTWoodTypes.YELLOW_IPE);
+            WoodType.register(MTWoodTypes.JUNIUM);
+            WoodType.register(MTWoodTypes.CACTUS);
         });
     }
 }

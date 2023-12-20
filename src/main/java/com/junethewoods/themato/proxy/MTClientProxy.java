@@ -34,6 +34,10 @@ public class MTClientProxy extends MTCommonProxy {
             RenderTypeLookup.setRenderLayer(MTBlocks.YELLOW_IPE_LEAVES.get(), RenderType.cutout());
             RenderTypeLookup.setRenderLayer(MTBlocks.YELLOW_IPE_SAPLING.get(), RenderType.cutout());
             RenderTypeLookup.setRenderLayer(MTBlocks.POTTED_YELLOW_IPE_SAPLING.get(), RenderType.cutout());
+            RenderTypeLookup.setRenderLayer(MTBlocks.JUNIUM_LEAVES.get(), RenderType.cutout());
+            RenderTypeLookup.setRenderLayer(MTBlocks.JUNIUM_SAPLING.get(), RenderType.cutout());
+            RenderTypeLookup.setRenderLayer(MTBlocks.POTTED_JUNIUM_SAPLING.get(), RenderType.cutout());
+            RenderTypeLookup.setRenderLayer(MTBlocks.STRIPPED_CACTUS.get(), RenderType.cutout());
             RenderTypeLookup.setRenderLayer(MTBlocks.ROSE.get(), RenderType.cutout());
             RenderTypeLookup.setRenderLayer(MTBlocks.CYAN_ROSE.get(), RenderType.cutout());
             RenderTypeLookup.setRenderLayer(MTBlocks.PAEONIA.get(), RenderType.cutout());
@@ -97,6 +101,30 @@ public class MTClientProxy extends MTCommonProxy {
             flammable(MTBlocks.YELLOW_IPE_LEAVES.get(), 30, 60);
             flammable(MTBlocks.YELLOW_IPE_SAPLING.get(), 60, 100);
 
+            flammable(MTBlocks.JUNIUM_LOG.get(), 5, 5);
+            flammable(MTBlocks.JUNIUM_WOOD.get(), 5, 5);
+            flammable(MTBlocks.STRIPPED_JUNIUM_LOG.get(), 5, 5);
+            flammable(MTBlocks.STRIPPED_JUNIUM_WOOD.get(), 5, 5);
+            flammable(MTBlocks.JUNIUM_PLANKS.get(), 5, 20);
+            flammable(MTBlocks.JUNIUM_STAIRS.get(), 5, 20);
+            flammable(MTBlocks.JUNIUM_SLAB.get(), 5, 20);
+            flammable(MTBlocks.JUNIUM_FENCE.get(), 5, 20);
+            flammable(MTBlocks.JUNIUM_FENCE_GATE.get(), 5, 20);
+            flammable(MTBlocks.JUNIUM_SIGN.get(), 5, 20);
+            flammable(MTBlocks.JUNIUM_WALL_SIGN.get(), 5, 20);
+            flammable(MTBlocks.JUNIUM_LEAVES.get(), 30, 60);
+            flammable(MTBlocks.JUNIUM_SAPLING.get(), 60, 100);
+
+            flammable(Blocks.CACTUS, 5, 20);
+            flammable(MTBlocks.STRIPPED_CACTUS.get(), 5, 20);
+            flammable(MTBlocks.CACTUS_PLANKS.get(), 5, 20);
+            flammable(MTBlocks.CACTUS_STAIRS.get(), 5, 20);
+            flammable(MTBlocks.CACTUS_SLAB.get(), 5, 20);
+            flammable(MTBlocks.CACTUS_FENCE.get(), 5, 20);
+            flammable(MTBlocks.CACTUS_FENCE_GATE.get(), 5, 20);
+            flammable(MTBlocks.CACTUS_SIGN.get(), 5, 20);
+            flammable(MTBlocks.CACTUS_WALL_SIGN.get(), 5, 20);
+
             flammable(MTBlocks.ROSE.get(), 60, 100);
             flammable(MTBlocks.CYAN_ROSE.get(), 60, 100);
             flammable(MTBlocks.PAEONIA.get(), 60, 100);
@@ -107,6 +135,8 @@ public class MTClientProxy extends MTCommonProxy {
             Atlases.addWoodType(MTWoodTypes.PURPLE_IPE);
             Atlases.addWoodType(MTWoodTypes.RED_IPE);
             Atlases.addWoodType(MTWoodTypes.YELLOW_IPE);
+            Atlases.addWoodType(MTWoodTypes.JUNIUM);
+            Atlases.addWoodType(MTWoodTypes.CACTUS);
         });
     }
 

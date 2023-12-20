@@ -8,4 +8,7 @@ public class MTWoodTypes {
     public static final WoodType PURPLE_IPE = WoodType.create(TheMato.resourceLoc("purple_ipe").toString());
     public static final WoodType RED_IPE = WoodType.create(TheMato.resourceLoc("red_ipe").toString());
     public static final WoodType YELLOW_IPE = WoodType.create(TheMato.resourceLoc("yellow_ipe").toString());
+
+    public static final WoodType JUNIUM = WoodType.create(TheMato.resourceLoc("junium").toString());
+    public static final WoodType CACTUS = WoodType.create(TheMato.resourceLoc("cactus").toString());
 }

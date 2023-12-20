@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "side": "themato:block/junium_planks",
+    "bottom": "themato:block/junium_planks",
+    "top": "themato:block/junium_planks"
+  }
+}

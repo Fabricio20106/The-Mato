@@ -13,5 +13,6 @@ public class MTBlockEntities {
 
     public static final RegistryObject<TileEntityType<MTSignBlockEntity>> MATO_SIGN = BLOCK_ENTITIES.register("mato_sign", () -> TileEntityType.Builder.of(MTSignBlockEntity::new,
             MTBlocks.PINK_IPE_SIGN.get(), MTBlocks.PINK_IPE_WALL_SIGN.get(), MTBlocks.PURPLE_IPE_SIGN.get(), MTBlocks.PURPLE_IPE_WALL_SIGN.get(), MTBlocks.RED_IPE_SIGN.get(),
-            MTBlocks.RED_IPE_WALL_SIGN.get(), MTBlocks.YELLOW_IPE_SIGN.get(), MTBlocks.YELLOW_IPE_WALL_SIGN.get()).build(null));
+            MTBlocks.RED_IPE_WALL_SIGN.get(), MTBlocks.YELLOW_IPE_SIGN.get(), MTBlocks.YELLOW_IPE_WALL_SIGN.get(), MTBlocks.JUNIUM_SIGN.get(), MTBlocks.JUNIUM_WALL_SIGN.get(), MTBlocks.CACTUS_SIGN.get(), MTBlocks.CACTUS_WALL_SIGN.get())
+            .build(null));
 }
