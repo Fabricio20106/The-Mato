@@ -1,5 +1,8 @@
 {
+  "biome.themato.frozen_peaks": "Frozen Peaks",
+  "biome.themato.grove": "Grove",
   "biome.themato.ipe_forest": "Ipe Forest",
+  "biome.themato.meadow": "Meadow",
   "biome.themato.the_woods": "The Woods",
   "block.themato.cactus_button": "Cactus Button",
   "block.themato.cactus_fence": "Cactus Fence",
@@ -46,6 +49,7 @@
   "block.themato.potted_red_ipe_sapling": "Potted Red Ipe Sapling",
   "block.themato.potted_rose": "Potted Rose",
   "block.themato.potted_yellow_ipe_sapling": "Potted Yellow Ipe Sapling",
+  "block.themato.powder_snow": "Powder Snow",
   "block.themato.purple_ipe_button": "Purple Ipe Button",
   "block.themato.purple_ipe_fence": "Purple Ipe Fence",
   "block.themato.purple_ipe_fence_gate": "Purple Ipe Fence Gate",
@@ -103,7 +107,10 @@
   "configs.themato.matoFlowersGeneration.tooltip": "Allow flowers added by The Mato (roses, cyan roses and paeonias) to generate?",
   "configs.themato.theWoodsGeneration": "The Woods Generation",
   "configs.themato.theWoodsGeneration.tooltip": "Allow The Woods (biome) to generate?",
+  "death.attack.freeze": "%1$s froze to death",
+  "death.attack.freeze.player": "%1$s was frozen to death by %2$s",
   "item.themato.cactus_candy": "Cactus Candy",
   "item.themato.liquid_cactus_bucket": "Liquid Cactus Bucket",
+  "item.themato.powder_snow_bucket": "Powder Snow Bucket",
   "itemGroup.themato_tab": "The Mato"
 }

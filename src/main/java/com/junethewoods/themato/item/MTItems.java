@@ -2,6 +2,7 @@ package com.junethewoods.themato.item;
 
 import com.junethewoods.themato.TheMato;
 import com.junethewoods.themato.block.MTBlocks;
+import com.junethewoods.themato.item.custom.BlockBucketItem;
 import com.junethewoods.themato.item.custom.LiquidCactusBucketItem;
 import com.junethewoods.themato.item.custom.MTFoods;
 import com.junethewoods.themato.util.MTTab;
@@ -112,6 +113,7 @@ public class MTItems {
     public static final RegistryObject<Item> PAEONIA = ITEMS.register("paeonia", () -> new BlockItem(MTBlocks.PAEONIA.get(), new Item.Properties().tab(MTTab.TAB)));
 
     // Actual Items
+    public static final RegistryObject<Item> POWDER_SNOW_BUCKET = ITEMS.register("powder_snow_bucket", () -> new BlockBucketItem(MTBlocks.POWDER_SNOW.get(), new Item.Properties().stacksTo(1).craftRemainder(Items.BUCKET).tab(MTTab.TAB)));
     public static final RegistryObject<Item> LIQUID_CACTUS_BUCKET = ITEMS.register("liquid_cactus_bucket", () -> new LiquidCactusBucketItem(new Item.Properties().stacksTo(1).craftRemainder(Items.BUCKET).tab(MTTab.TAB)));
     public static final RegistryObject<Item> CACTUS_CANDY = ITEMS.register("cactus_candy", () -> new Item(new Item.Properties().food(MTFoods.CACTUS_CANDY).tab(MTTab.TAB)));
 }
