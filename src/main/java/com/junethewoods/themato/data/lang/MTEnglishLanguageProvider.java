@@ -118,12 +118,21 @@ public class MTEnglishLanguageProvider extends LanguageProvider {
         addBlock(MTBlocks.POTTED_CYAN_ROSE, "Potted Cyan Rose");
         addBlock(MTBlocks.POTTED_PAEONIA, "Potted Paeonia");
 
+        addBlock(MTBlocks.POWDER_SNOW, "Powder Snow");
+
+        addItem(MTItems.POWDER_SNOW_BUCKET, "Powder Snow Bucket");
         addItem(MTItems.LIQUID_CACTUS_BUCKET, "Liquid Cactus Bucket");
         addItem(MTItems.CACTUS_CANDY, "Cactus Candy");
 
         add("itemGroup.themato_tab", "The Mato");
         add("biome.themato.ipe_forest", "Ipe Forest");
         add("biome.themato.the_woods", "The Woods");
+        add("biome.themato.meadow", "Meadow");
+        add("biome.themato.grove", "Grove");
+        add("biome.themato.frozen_peaks", "Frozen Peaks");
+
+        add("death.attack.freeze", "%1$s froze to death");
+        add("death.attack.freeze.player", "%1$s was frozen to death by %2$s");
 
         add("configs.themato.ipeForestGeneration", "Ipe Forest Generation");
         add("configs.themato.ipeForestGeneration.tooltip", "Allow Ipe Forests to generate?");

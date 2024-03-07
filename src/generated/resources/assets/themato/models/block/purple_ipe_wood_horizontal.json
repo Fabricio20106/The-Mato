@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column_horizontal",
+  "textures": {
+    "side": "themato:block/purple_ipe_log",
+    "end": "themato:block/purple_ipe_log"
+  }
+}

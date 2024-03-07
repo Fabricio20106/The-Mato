@@ -1,0 +1,7 @@
+{
+  "replace": false,
+  "values": [
+    "#melony:farmland",
+    "minecraft:snow_block"
+  ]
+}

@@ -107,6 +107,7 @@ public class MTItemModelProvider extends ItemModelProvider {
         standard(generated, "junium_sign");
         standard(generated, "cactus_sign");
         standard(generated, "yellow_ipe_boat");
+        standard(generated, "powder_snow_bucket");
         standard(generated, "liquid_cactus_bucket");
         standard(generated, "cactus_candy");
 
