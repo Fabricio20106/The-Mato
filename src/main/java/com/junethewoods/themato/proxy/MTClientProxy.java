@@ -44,7 +44,6 @@ public class MTClientProxy extends MTCommonProxy {
             RenderTypeLookup.setRenderLayer(MTBlocks.POTTED_ROSE.get(), RenderType.cutout());
             RenderTypeLookup.setRenderLayer(MTBlocks.POTTED_CYAN_ROSE.get(), RenderType.cutout());
             RenderTypeLookup.setRenderLayer(MTBlocks.POTTED_PAEONIA.get(), RenderType.cutout());
-            RenderTypeLookup.setRenderLayer(MTBlocks.POWDER_SNOW.get(), RenderType.cutout());
 
             flammable(MTBlocks.PINK_IPE_LOG.get(), 5, 5);
             flammable(MTBlocks.PINK_IPE_WOOD.get(), 5, 5);

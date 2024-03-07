@@ -30,9 +30,9 @@ public class MTBlockStateProvider extends BlockStateProvider {
     protected void registerStatesAndModels() {
         // Pink Ipe
         logBlock((RotatedPillarBlock) MTBlocks.PINK_IPE_LOG.get());
-        axisBlock((RotatedPillarBlock) MTBlocks.PINK_IPE_WOOD.get(), modLoc("block/pink_ipe_log"), modLoc("block/pink_ipe_log"));
+        simpleBlock(MTBlocks.PINK_IPE_WOOD.get(), models().cubeColumn("pink_ipe_wood", modLoc("block/pink_ipe_log"), modLoc("block/pink_ipe_log")));
         logBlock((RotatedPillarBlock) MTBlocks.STRIPPED_PINK_IPE_LOG.get());
-        axisBlock((RotatedPillarBlock) MTBlocks.STRIPPED_PINK_IPE_WOOD.get(), modLoc("block/stripped_pink_ipe_log"), modLoc("block/stripped_pink_ipe_log"));
+        simpleBlock(MTBlocks.STRIPPED_PINK_IPE_WOOD.get(), models().cubeColumn("stripped_pink_ipe_wood", modLoc("block/stripped_pink_ipe_log"), modLoc("block/stripped_pink_ipe_log")));
         simpleBlock(MTBlocks.PINK_IPE_LEAVES.get());
         simpleBlock(MTBlocks.PINK_IPE_SAPLING.get(), models().cross("pink_ipe_sapling", modLoc("block/pink_ipe_sapling")));
         simpleBlock(MTBlocks.POTTED_PINK_IPE_SAPLING.get(), models().withExistingParent("potted_pink_ipe_sapling", mcLoc("block/flower_pot_cross")).texture("plant", "block/pink_ipe_sapling"));
@@ -44,9 +44,9 @@ public class MTBlockStateProvider extends BlockStateProvider {
 
         // Purple Ipe
         logBlock((RotatedPillarBlock) MTBlocks.PURPLE_IPE_LOG.get());
-        axisBlock((RotatedPillarBlock) MTBlocks.PURPLE_IPE_WOOD.get(), modLoc("block/purple_ipe_log"), modLoc("block/purple_ipe_log"));
+        simpleBlock(MTBlocks.PURPLE_IPE_WOOD.get(), models().cubeColumn("purple_ipe_wood", modLoc("block/purple_ipe_log"), modLoc("block/purple_ipe_log")));
         logBlock((RotatedPillarBlock) MTBlocks.STRIPPED_PURPLE_IPE_LOG.get());
-        axisBlock((RotatedPillarBlock) MTBlocks.STRIPPED_PURPLE_IPE_WOOD.get(), modLoc("block/stripped_purple_ipe_log"), modLoc("block/stripped_purple_ipe_log"));
+        simpleBlock(MTBlocks.STRIPPED_PURPLE_IPE_WOOD.get(), models().cubeColumn("stripped_purple_ipe_wood", modLoc("block/stripped_purple_ipe_log"), modLoc("block/stripped_purple_ipe_log")));
         simpleBlock(MTBlocks.PURPLE_IPE_LEAVES.get());
         simpleBlock(MTBlocks.PURPLE_IPE_SAPLING.get(), models().cross("purple_ipe_sapling", modLoc("block/purple_ipe_sapling")));
         simpleBlock(MTBlocks.POTTED_PURPLE_IPE_SAPLING.get(), models().withExistingParent("potted_purple_ipe_sapling", mcLoc("block/flower_pot_cross")).texture("plant", "block/purple_ipe_sapling"));
@@ -58,9 +58,9 @@ public class MTBlockStateProvider extends BlockStateProvider {
 
         // Red Ipe
         logBlock((RotatedPillarBlock) MTBlocks.RED_IPE_LOG.get());
-        axisBlock((RotatedPillarBlock) MTBlocks.RED_IPE_WOOD.get(), modLoc("block/red_ipe_log"), modLoc("block/red_ipe_log"));
+        simpleBlock(MTBlocks.RED_IPE_WOOD.get(), models().cubeColumn("red_ipe_wood", modLoc("block/red_ipe_log"), modLoc("block/red_ipe_log")));
         logBlock((RotatedPillarBlock) MTBlocks.STRIPPED_RED_IPE_LOG.get());
-        axisBlock((RotatedPillarBlock) MTBlocks.STRIPPED_RED_IPE_WOOD.get(), modLoc("block/stripped_red_ipe_log"), modLoc("block/stripped_red_ipe_log"));
+        simpleBlock(MTBlocks.STRIPPED_RED_IPE_WOOD.get(), models().cubeColumn("stripped_red_ipe_wood", modLoc("block/stripped_red_ipe_log"), modLoc("block/stripped_red_ipe_log")));
         simpleBlock(MTBlocks.RED_IPE_LEAVES.get());
         simpleBlock(MTBlocks.RED_IPE_SAPLING.get(), models().cross("red_ipe_sapling", modLoc("block/red_ipe_sapling")));
         simpleBlock(MTBlocks.POTTED_RED_IPE_SAPLING.get(), models().withExistingParent("potted_red_ipe_sapling", mcLoc("block/flower_pot_cross")).texture("plant", "block/red_ipe_sapling"));
@@ -72,9 +72,9 @@ public class MTBlockStateProvider extends BlockStateProvider {
 
         // Yellow Ipe
         logBlock((RotatedPillarBlock) MTBlocks.YELLOW_IPE_LOG.get());
-        axisBlock((RotatedPillarBlock) MTBlocks.YELLOW_IPE_WOOD.get(), modLoc("block/yellow_ipe_log"), modLoc("block/yellow_ipe_log"));
+        simpleBlock(MTBlocks.YELLOW_IPE_WOOD.get(), models().cubeColumn("yellow_ipe_wood", modLoc("block/yellow_ipe_log"), modLoc("block/yellow_ipe_log")));
         logBlock((RotatedPillarBlock) MTBlocks.STRIPPED_YELLOW_IPE_LOG.get());
-        axisBlock((RotatedPillarBlock) MTBlocks.STRIPPED_YELLOW_IPE_WOOD.get(), modLoc("block/stripped_yellow_ipe_log"), modLoc("block/stripped_yellow_ipe_log"));
+        simpleBlock(MTBlocks.STRIPPED_YELLOW_IPE_WOOD.get(), models().cubeColumn("stripped_yellow_ipe_wood", modLoc("block/stripped_yellow_ipe_log"), modLoc("block/stripped_yellow_ipe_log")));
         simpleBlock(MTBlocks.YELLOW_IPE_LEAVES.get());
         simpleBlock(MTBlocks.YELLOW_IPE_SAPLING.get(), models().cross("yellow_ipe_sapling", modLoc("block/yellow_ipe_sapling")));
         simpleBlock(MTBlocks.POTTED_YELLOW_IPE_SAPLING.get(), models().withExistingParent("potted_yellow_ipe_sapling", mcLoc("block/flower_pot_cross")).texture("plant", "block/yellow_ipe_sapling"));
@@ -86,9 +86,9 @@ public class MTBlockStateProvider extends BlockStateProvider {
 
         // Junium
         logBlock((RotatedPillarBlock) MTBlocks.JUNIUM_LOG.get());
-        axisBlock((RotatedPillarBlock) MTBlocks.JUNIUM_WOOD.get(), modLoc("block/junium_log"), modLoc("block/junium_log"));
+        simpleBlock(MTBlocks.JUNIUM_WOOD.get(), models().cubeColumn("junium_wood", modLoc("block/junium_log"), modLoc("block/junium_log")));
         logBlock((RotatedPillarBlock) MTBlocks.STRIPPED_JUNIUM_LOG.get());
-        axisBlock((RotatedPillarBlock) MTBlocks.STRIPPED_JUNIUM_WOOD.get(), modLoc("block/stripped_junium_log"), modLoc("block/stripped_junium_log"));
+        simpleBlock(MTBlocks.STRIPPED_JUNIUM_WOOD.get(), models().cubeColumn("stripped_junium_wood", modLoc("block/stripped_junium_log"), modLoc("block/stripped_junium_log")));
         simpleBlock(MTBlocks.JUNIUM_LEAVES.get());
         simpleBlock(MTBlocks.JUNIUM_SAPLING.get(), models().cross("junium_sapling", modLoc("block/junium_sapling")));
         simpleBlock(MTBlocks.POTTED_JUNIUM_SAPLING.get(), models().withExistingParent("potted_junium_sapling", mcLoc("block/flower_pot_cross")).texture("plant", "block/junium_sapling"));
@@ -122,9 +122,6 @@ public class MTBlockStateProvider extends BlockStateProvider {
         simpleBlock(MTBlocks.POTTED_ROSE.get(), models().withExistingParent("potted_rose", mcLoc("block/flower_pot_cross")).texture("plant", "block/rose"));
         simpleBlock(MTBlocks.POTTED_CYAN_ROSE.get(), models().withExistingParent("potted_cyan_rose", mcLoc("block/flower_pot_cross")).texture("plant", "block/cyan_rose"));
         simpleBlock(MTBlocks.POTTED_PAEONIA.get(), models().withExistingParent("potted_paeonia", mcLoc("block/flower_pot_cross")).texture("plant", "block/paeonia"));
-
-        // Miscellaneous
-        simpleBlock(MTBlocks.POWDER_SNOW.get());
     }
 
     public void pressurePlate(Block pressurePlate, ResourceLocation planks) {

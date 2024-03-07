@@ -6,8 +6,7 @@
   "compatibilityLevel": "JAVA_8",
   "mixins": [
     "AbstractFurnaceTileEntityMixin",
-    "CactusBlockMixin",
-    "TreeFeatureMixin"
+    "CactusBlockMixin"
   ],
   "client": [],
   "server": [],
