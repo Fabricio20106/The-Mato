@@ -26,6 +26,9 @@ public class MTBiomes {
     public static final RegistryObject<Biome> MEADOW = BIOMES.register("meadow", MTBiomes::meadow);
     public static final RegistryObject<Biome> GROVE = BIOMES.register("grove", MTBiomes::grove);
     public static final RegistryObject<Biome> FROZEN_PEAKS = BIOMES.register("frozen_peaks", MTBiomes::frozenPeaks);
+    public static final RegistryObject<Biome> SNOWY_SLOPES = BIOMES.register("snowy_slopes", MTBiomes::snowySlopes);
+    public static final RegistryObject<Biome> JAGGED_PEAKS = BIOMES.register("jagged_peaks", MTBiomes::jaggedPeaks);
+    public static final RegistryObject<Biome> STONY_PEAKS = BIOMES.register("stony_peaks", MTBiomes::stonyPeaks);
 
     private static Biome ipeForest() {
         MobSpawnInfo.Builder spawns = new MobSpawnInfo.Builder().setPlayerCanSpawn();
@@ -85,9 +88,9 @@ public class MTBiomes {
         MobSpawnInfo.Builder spawns = new MobSpawnInfo.Builder().setPlayerCanSpawn();
         BiomeGenerationSettings.Builder settings = new BiomeGenerationSettings.Builder().surfaceBuilder(ConfiguredSurfaceBuilders.GRASS);
 
-        settings.addStructureStart(StructureFeatures.VILLAGE_PLAINS);
         settings.addStructureStart(StructureFeatures.PILLAGER_OUTPOST);
-        MTDefaultBiomeFeatures.globalOverworldGeneration(settings);
+        settings.addStructureStart(StructureFeatures.VILLAGE_PLAINS);
+        MTDefaultBiomeFeatures.globalOverworldGeneration(settings, true);
         DefaultBiomeFeatures.addPlainGrass(settings);
         DefaultBiomeFeatures.addDefaultOres(settings);
         DefaultBiomeFeatures.addDefaultSoftDisks(settings);
@@ -108,7 +111,8 @@ public class MTBiomes {
         MobSpawnInfo.Builder spawns = new MobSpawnInfo.Builder().setPlayerCanSpawn();
         BiomeGenerationSettings.Builder settings = new BiomeGenerationSettings.Builder().surfaceBuilder(MTSurfaceBuilders.GROVE);
 
-        MTDefaultBiomeFeatures.globalOverworldGeneration(settings);
+        settings.addStructureStart(StructureFeatures.PILLAGER_OUTPOST);
+        MTDefaultBiomeFeatures.globalOverworldGeneration(settings, true);
         MTDefaultBiomeFeatures.addCavesAndCliffsMountainOres(settings);
         MTDefaultBiomeFeatures.addGroveTrees(settings);
         MTDefaultBiomeFeatures.addPowderSnow(settings);
@@ -120,7 +124,7 @@ public class MTBiomes {
         spawns.addSpawn(EntityClassification.CREATURE, new MobSpawnInfo.Spawners(EntityType.WOLF, 8, 4, 4)).addSpawn(EntityClassification.CREATURE, new MobSpawnInfo.Spawners(EntityType.RABBIT, 4,
                 2, 3)).addSpawn(EntityClassification.CREATURE, new MobSpawnInfo.Spawners(EntityType.FOX, 8, 2, 4));
         commonSpawns(spawns);
-        farmAnimals(spawns);
+        // Removed in 24w10a.
 
         return new Biome.Builder().precipitation(Biome.RainType.SNOW).biomeCategory(Biome.Category.FOREST).depth(1.5F).scale(0.7F).temperature(-0.2F).downfall(0.8F).specialEffects(
                 new BiomeAmbience.Builder().waterColor(4159204).waterFogColor(329011).fogColor(12638463).skyColor(calculateSkyColor(-0.2F)).ambientMoodSound(MoodSoundAmbience.LEGACY_CAVE_SETTINGS)
@@ -132,7 +136,7 @@ public class MTBiomes {
         BiomeGenerationSettings.Builder settings = new BiomeGenerationSettings.Builder().surfaceBuilder(MTSurfaceBuilders.FROZEN_PEAKS);
 
         settings.addStructureStart(StructureFeatures.PILLAGER_OUTPOST);
-        MTDefaultBiomeFeatures.globalOverworldGeneration(settings);
+        MTDefaultBiomeFeatures.globalOverworldGeneration(settings, true);
         MTDefaultBiomeFeatures.addCavesAndCliffsMountainOres(settings);
         MTDefaultBiomeFeatures.addPowderSnow(settings);
         // Todo: Fix this later.
@@ -146,6 +150,65 @@ public class MTBiomes {
         return new Biome.Builder().precipitation(Biome.RainType.SNOW).biomeCategory(Biome.Category.EXTREME_HILLS).depth(3).scale(1).temperature(-0.7F).downfall(0.9F).specialEffects(
                 new BiomeAmbience.Builder().waterColor(4159204).waterFogColor(329011).fogColor(12638463).grassColorOverride(0x80B497).foliageColorOverride(0x60A17B).skyColor(
                         MTDefaultBiomeFeatures.calculateSkyColor(0.9F)).ambientMoodSound(MoodSoundAmbience.LEGACY_CAVE_SETTINGS).backgroundMusic(BackgroundMusicTracks.createGameMusic(MTSounds.FROZEN_PEAKS_MUSIC.get())).build())
+                .mobSpawnSettings(spawns.build()).generationSettings(settings.build()).build();
+    }
+
+    private static Biome snowySlopes() {
+        MobSpawnInfo.Builder spawns = new MobSpawnInfo.Builder().setPlayerCanSpawn();
+        BiomeGenerationSettings.Builder settings = new BiomeGenerationSettings.Builder().surfaceBuilder(MTSurfaceBuilders.SNOWY_SLOPES);
+
+        settings.addStructureStart(StructureFeatures.PILLAGER_OUTPOST);
+        settings.addStructureStart(StructureFeatures.RUINED_PORTAL_MOUNTAIN);
+        settings.addStructureStart(StructureFeatures.IGLOO);
+        MTDefaultBiomeFeatures.globalOverworldGeneration(settings, true);
+        MTDefaultBiomeFeatures.addCavesAndCliffsMountainOres(settings);
+        MTDefaultBiomeFeatures.addPowderSnow(settings);
+        DefaultBiomeFeatures.addDefaultOres(settings);
+        DefaultBiomeFeatures.addDefaultSoftDisks(settings);
+        DefaultBiomeFeatures.addInfestedStone(settings);
+
+        commonSpawns(spawns);
+        spawns.addSpawn(EntityClassification.CREATURE, new MobSpawnInfo.Spawners(EntityType.RABBIT, 4, 2, 3));
+
+        return new Biome.Builder().precipitation(Biome.RainType.SNOW).biomeCategory(Biome.Category.EXTREME_HILLS).depth(3).scale(0.5F).temperature(0.3F).downfall(0.9F).specialEffects(
+                new BiomeAmbience.Builder().waterColor(4159204).waterFogColor(329011).fogColor(12638463).grassColorOverride(0x80B497).foliageColorOverride(0x60A17B).skyColor(
+                        MTDefaultBiomeFeatures.calculateSkyColor(0.9F)).ambientMoodSound(MoodSoundAmbience.LEGACY_CAVE_SETTINGS).backgroundMusic(BackgroundMusicTracks.createGameMusic(MTSounds.SNOWY_SLOPES_MUSIC.get())).build())
+                .mobSpawnSettings(spawns.build()).generationSettings(settings.build()).build();
+    }
+
+    private static Biome jaggedPeaks() {
+        MobSpawnInfo.Builder spawns = new MobSpawnInfo.Builder().setPlayerCanSpawn();
+        BiomeGenerationSettings.Builder settings = new BiomeGenerationSettings.Builder().surfaceBuilder(MTSurfaceBuilders.JAGGED_PEAKS);
+
+        settings.addStructureStart(StructureFeatures.PILLAGER_OUTPOST);
+        MTDefaultBiomeFeatures.globalOverworldGeneration(settings, true);
+        MTDefaultBiomeFeatures.addCavesAndCliffsMountainOres(settings);
+        MTDefaultBiomeFeatures.addPowderSnow(settings);
+        DefaultBiomeFeatures.addDefaultOres(settings);
+        DefaultBiomeFeatures.addDefaultSoftDisks(settings);
+        DefaultBiomeFeatures.addInfestedStone(settings);
+
+        return new Biome.Builder().precipitation(Biome.RainType.SNOW).biomeCategory(Biome.Category.EXTREME_HILLS).depth(4).scale(1.5F).temperature(-0.7F).downfall(0.9F).specialEffects(
+                new BiomeAmbience.Builder().waterColor(4159204).waterFogColor(329011).fogColor(12638463).grassColorOverride(0x80B497).foliageColorOverride(0x60A17B).skyColor(
+                        MTDefaultBiomeFeatures.calculateSkyColor(0.9F)).ambientMoodSound(MoodSoundAmbience.LEGACY_CAVE_SETTINGS).backgroundMusic(BackgroundMusicTracks.createGameMusic(MTSounds.JAGGED_PEAKS_MUSIC.get())).build())
+                .mobSpawnSettings(spawns.build()).generationSettings(settings.build()).build();
+    }
+
+    private static Biome stonyPeaks() {
+        MobSpawnInfo.Builder spawns = new MobSpawnInfo.Builder().setPlayerCanSpawn();
+        BiomeGenerationSettings.Builder settings = new BiomeGenerationSettings.Builder().surfaceBuilder(MTSurfaceBuilders.STONY_PEAKS);
+
+        settings.addStructureStart(StructureFeatures.PILLAGER_OUTPOST);
+        MTDefaultBiomeFeatures.globalOverworldGeneration(settings, false);
+        MTDefaultBiomeFeatures.addCavesAndCliffsMountainOres(settings);
+        MTDefaultBiomeFeatures.addStonyPeaksVeins(settings);
+        DefaultBiomeFeatures.addDefaultOres(settings);
+        DefaultBiomeFeatures.addDefaultSoftDisks(settings);
+        DefaultBiomeFeatures.addInfestedStone(settings);
+
+        return new Biome.Builder().precipitation(Biome.RainType.RAIN).biomeCategory(Biome.Category.EXTREME_HILLS).depth(3.5F).scale(2).temperature(1).downfall(0.3F).specialEffects(
+                        new BiomeAmbience.Builder().waterColor(4159204).waterFogColor(329011).fogColor(12638463).grassColorOverride(0x9ABE4B).foliageColorOverride(0x82AC1E).skyColor(
+                                MTDefaultBiomeFeatures.calculateSkyColor(0.3F)).ambientMoodSound(MoodSoundAmbience.LEGACY_CAVE_SETTINGS).backgroundMusic(BackgroundMusicTracks.createGameMusic(MTSounds.STONY_PEAKS_MUSIC.get())).build())
                 .mobSpawnSettings(spawns.build()).generationSettings(settings.build()).build();
     }
 }

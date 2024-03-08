@@ -102,6 +102,9 @@ public class MTItems {
     public static final RegistryObject<Item> CACTUS_PRESSURE_PLATE = ITEMS.register("cactus_pressure_plate", () -> new BlockItem(MTBlocks.CACTUS_PRESSURE_PLATE.get(), new Item.Properties().tab(MTTab.TAB)));
     public static final RegistryObject<Item> CACTUS_BUTTON = ITEMS.register("cactus_button", () -> new BlockItem(MTBlocks.CACTUS_BUTTON.get(), new Item.Properties().tab(MTTab.TAB)));
 
+    // Miscellaneous Blocks
+    public static final RegistryObject<Item> CALCITE = ITEMS.register("calcite", () -> new BlockItem(MTBlocks.CALCITE.get(), new Item.Properties().tab(MTTab.TAB)));
+
     public static final RegistryObject<Item> PINK_IPE_SIGN = ITEMS.register("pink_ipe_sign", () -> new SignItem(new Item.Properties().stacksTo(16).tab(MTTab.TAB), MTBlocks.PINK_IPE_SIGN.get(), MTBlocks.PINK_IPE_WALL_SIGN.get()));
     public static final RegistryObject<Item> PURPLE_IPE_SIGN = ITEMS.register("purple_ipe_sign", () -> new SignItem(new Item.Properties().stacksTo(16).tab(MTTab.TAB), MTBlocks.PURPLE_IPE_SIGN.get(), MTBlocks.PURPLE_IPE_WALL_SIGN.get()));
     public static final RegistryObject<Item> RED_IPE_SIGN = ITEMS.register("red_ipe_sign", () -> new SignItem(new Item.Properties().stacksTo(16).tab(MTTab.TAB), MTBlocks.RED_IPE_SIGN.get(), MTBlocks.RED_IPE_WALL_SIGN.get()));

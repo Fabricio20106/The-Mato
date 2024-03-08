@@ -14,9 +14,14 @@ public class MTTags {
     public static class Blocks {
         public static final ITag.INamedTag<Block> SNOWY_TREES_SPAWNABLE_ON = theMato("snowy_trees_spawnable_on");
         public static final ITag.INamedTag<Block> POWDER_SNOW_REPLACEABLES = theMato("powder_snow_replaceables");
+        public static final ITag.INamedTag<Block> OVERWORLD_CARVER_REPLACEABLES = minecraft("overworld_carver_replaceables");
 
         public static ITag.INamedTag<Block> theMato(String name) {
             return BlockTags.bind(TheMato.resourceLoc(name).toString());
+        }
+
+        public static ITag.INamedTag<Block> minecraft(String name) {
+            return BlockTags.bind(new ResourceLocation("minecraft", name).toString());
         }
     }
 

@@ -1,0 +1,55 @@
+{
+  "music.game": {
+    "sounds": [
+      {
+        "name": "themato:music/game/trails_and_tales/a_familiar_room",
+        "stream": true,
+        "volume": 0.4
+      },
+      {
+        "name": "themato:music/game/caves_and_cliffs/comforting_memories",
+        "stream": true,
+        "volume": 0.4
+      },
+      {
+        "name": "themato:music/game/caves_and_cliffs/floating_dream",
+        "stream": true,
+        "volume": 0.4
+      },
+      {
+        "name": "themato:music/game/caves_and_cliffs/left_to_bloom",
+        "stream": true,
+        "volume": 0.4
+      },
+      {
+        "name": "themato:music/game/caves_and_cliffs/one_more_day",
+        "stream": true,
+        "volume": 0.4
+      }
+    ]
+  },
+  "music.menu": {
+    "sounds": [
+      {
+        "name": "themato:music/game/caves_and_cliffs/infinite_amethyst",
+        "stream": true
+      },
+      {
+        "name": "themato:music/game/caves_and_cliffs/left_to_bloom",
+        "stream": true
+      },
+      {
+        "name": "themato:music/game/caves_and_cliffs/one_more_day",
+        "stream": true
+      },
+      {
+        "name": "themato:music/game/caves_and_cliffs/stand_tall",
+        "stream": true
+      },
+      {
+        "name": "themato:music/game/caves_and_cliffs/wending",
+        "stream": true
+      }
+    ]
+  }
+}

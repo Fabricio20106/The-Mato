@@ -20,7 +20,7 @@ apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
 apply plugin: 'org.spongepowered.mixin'
 
-version = '1.16.5-v0.3.1'
+version = '1.16.5-v0.3.2'
 // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 group = 'com.junethewoods.themato'
 archivesBaseName = 'TheMato'
@@ -32,9 +32,9 @@ println('Java: ' + System.getProperty('java.version') + ' JVM: ' + System.getPro
 minecraft {
     // The mappings can be changed at any time, and must be in the following format:
     // Channel:     Version:
-    // snapshot   YYYYMMDD   Snapshot are built nightly;
-    // stable        #                 Stables are built at the discretion of the MCP team;
-    // official       MCVersion  Official field/method names from Mojang mapping files.
+    // snapshot   YYYYMMDD    Snapshot are built nightly;
+    // stable         #                       Stables are built at the discretion of the MCP team;
+    // official        MCVersion      Official field/method names from Mojang mapping files.
 
     // You must be aware of the Mojang license when using the 'official' mappings.
     // See more information here: https://github.com/MinecraftForge/MCPConfig/blob/master/Mojang.md
@@ -136,13 +136,14 @@ sourceSets.main.resources {
 }
 
 dependencies {
-    // Specify the Minecraft version to use. If this is any group other than 'net.minecraft', it is assumed that the dep is a Forge Gradle 'patcher' dependency, and it's patches will be applied.
+    // Specify the Minecraft version to use.
+    // If this is any group other than 'net.minecraft', it is assumed that the dep is a Forge Gradle 'patcher' dependency, and its patches will be applied.
     // The user development artifact is a special name and will get all sorts of transformations applied to it.
     minecraft 'net.minecraftforge:forge:1.16.5-36.2.39'
 
-    // Compile against the JEI API but do not include it at runtime.
+    // Compile against the Just Enough Items API but do not include it at runtime.
     compileOnly fg.deobf("mezz.jei:jei-${jei_version}:api")
-    // At runtime, use the full JEI jar.
+    // At runtime, use the full Just Enough Items jar.
     runtimeOnly fg.deobf("mezz.jei:jei-${jei_version}")
 
     // Annotation Processors
@@ -169,12 +170,12 @@ dependencies {
 
 repositories {
         maven {
-        // JEI
+        // Just Enough Items
         name 'DVS1 Maven FS'
         url 'https://dvs1.progwml6.com/files/maven'
     }
     maven {
-        // Location of a maven mirror for JEI files, as a fallback.
+        // Location of a maven mirror for Just Enough Items files, as a fallback.
         name = "ModMaven"
         url = "https://modmaven.k-4u.nl"
     }

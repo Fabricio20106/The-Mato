@@ -131,7 +131,8 @@ public class MTBlocks {
     public static final RegistryObject<Block> CACTUS_WALL_SIGN = BLOCKS.register("cactus_wall_sign", () -> new MTWallSignBlock(AbstractBlock.Properties.copy(CACTUS_PLANKS.get()).noCollission().strength(1).lootFrom(MTBlocks.CACTUS_SIGN), MTWoodTypes.CACTUS));
 
     // Plants
-    public static final RegistryObject<Block> POWDER_SNOW = BLOCKS.register("powder_snow", () -> new PowderSnowBlock(AbstractBlock.Properties.of(MTMaterials.POWDER_SNOW).strength(0.25F).sound(MTSoundTypes.POWDER_SNOW).dynamicShape()));
+    public static final RegistryObject<Block> CALCITE = BLOCKS.register("calcite", () -> new Block(AbstractBlock.Properties.of(Material.STONE, MaterialColor.TERRACOTTA_WHITE).strength(0.75F).sound(MTSoundTypes.CALCITE)));
+    public static final RegistryObject<Block> POWDER_SNOW = BLOCKS.register("powder_snow", () -> new PowderSnowBlock(AbstractBlock.Properties.of(MTMaterials.POWDER_SNOW).requiresCorrectToolForDrops().strength(0.25F).sound(MTSoundTypes.POWDER_SNOW))); // .dynamicShape()
     public static final RegistryObject<Block> ROSE = BLOCKS.register("rose", () -> new FlowerBlock(Effects.REGENERATION, 10, AbstractBlock.Properties.copy(Blocks.POPPY).sound(SoundType.CROP)));
     public static final RegistryObject<Block> CYAN_ROSE = BLOCKS.register("cyan_rose", () -> new FlowerBlock(Effects.ABSORPTION, 6, AbstractBlock.Properties.copy(Blocks.POPPY).sound(SoundType.CROP)));
     public static final RegistryObject<Block> PAEONIA = BLOCKS.register("paeonia", () -> new FlowerBlock(Effects.DIG_SPEED, 8, AbstractBlock.Properties.copy(Blocks.POPPY).sound(SoundType.CROP)));

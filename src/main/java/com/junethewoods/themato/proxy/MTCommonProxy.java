@@ -22,6 +22,8 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.ForgeRegistries;
 
+import static net.minecraftforge.common.BiomeDictionary.Type.*;
+
 public class MTCommonProxy {
     MTCommonProxy() {
         IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
@@ -55,26 +57,41 @@ public class MTCommonProxy {
             RegistryKey<Biome> meadowKey = RegistryKey.create(ForgeRegistries.Keys.BIOMES, MTBiomes.MEADOW.getId());
             RegistryKey<Biome> groveKey = RegistryKey.create(ForgeRegistries.Keys.BIOMES, MTBiomes.GROVE.getId());
             RegistryKey<Biome> frozenPeaksKey = RegistryKey.create(ForgeRegistries.Keys.BIOMES, MTBiomes.FROZEN_PEAKS.getId());
+            RegistryKey<Biome> snowySlopesKey = RegistryKey.create(ForgeRegistries.Keys.BIOMES, MTBiomes.SNOWY_SLOPES.getId());
+            RegistryKey<Biome> jaggedPeaksKey = RegistryKey.create(ForgeRegistries.Keys.BIOMES, MTBiomes.JAGGED_PEAKS.getId());
+            RegistryKey<Biome> stonyPeaksKey = RegistryKey.create(ForgeRegistries.Keys.BIOMES, MTBiomes.STONY_PEAKS.getId());
 
             if (MTConfigs.COMMON_CONFIGS.ipeForestGeneration.get()) {
-                BiomeDictionary.addTypes(ipeForestKey, BiomeDictionary.Type.FOREST, BiomeDictionary.Type.OVERWORLD);
-                BiomeManager.addBiome(BiomeManager.BiomeType.COOL, new BiomeManager.BiomeEntry(ipeForestKey, 35));
+                BiomeDictionary.addTypes(ipeForestKey, FOREST, OVERWORLD, LUSH);
+                BiomeManager.addBiome(BiomeManager.BiomeType.COOL, new BiomeManager.BiomeEntry(ipeForestKey, 25));
             }
             if (MTConfigs.COMMON_CONFIGS.theWoodsGeneration.get()) {
-                BiomeDictionary.addTypes(theWoodsKey, BiomeDictionary.Type.FOREST, BiomeDictionary.Type.OVERWORLD);
+                BiomeDictionary.addTypes(theWoodsKey, FOREST, OVERWORLD, DENSE);
                 BiomeManager.addBiome(BiomeManager.BiomeType.COOL, new BiomeManager.BiomeEntry(theWoodsKey, 15));
             }
             if (MTConfigs.COMMON_CONFIGS.meadowGeneration.get()) {
-                BiomeDictionary.addTypes(meadowKey, BiomeDictionary.Type.MOUNTAIN, BiomeDictionary.Type.OVERWORLD, BiomeDictionary.Type.LUSH);
+                BiomeDictionary.addTypes(meadowKey, MOUNTAIN, OVERWORLD, LUSH);
                 BiomeManager.addBiome(BiomeManager.BiomeType.COOL, new BiomeManager.BiomeEntry(meadowKey, 20));
             }
             if (MTConfigs.COMMON_CONFIGS.groveGeneration.get()) {
-                BiomeDictionary.addTypes(groveKey, BiomeDictionary.Type.HILLS, BiomeDictionary.Type.OVERWORLD, BiomeDictionary.Type.SNOWY, BiomeDictionary.Type.COLD, BiomeDictionary.Type.FOREST);
+                BiomeDictionary.addTypes(groveKey, HILLS, OVERWORLD, SNOWY, COLD, FOREST, CONIFEROUS);
                 BiomeManager.addBiome(BiomeManager.BiomeType.ICY, new BiomeManager.BiomeEntry(groveKey, 35));
             }
             if (MTConfigs.COMMON_CONFIGS.frozenPeaksGeneration.get()) {
-                BiomeDictionary.addTypes(frozenPeaksKey, BiomeDictionary.Type.MOUNTAIN, BiomeDictionary.Type.OVERWORLD, BiomeDictionary.Type.SNOWY, BiomeDictionary.Type.COLD);
+                BiomeDictionary.addTypes(frozenPeaksKey, MOUNTAIN, OVERWORLD, SNOWY, COLD);
                 BiomeManager.addBiome(BiomeManager.BiomeType.ICY, new BiomeManager.BiomeEntry(frozenPeaksKey, 25));
+            }
+            if (MTConfigs.COMMON_CONFIGS.snowySlopesGeneration.get()) {
+                BiomeDictionary.addTypes(snowySlopesKey, OVERWORLD, MOUNTAIN, SNOWY, COLD);
+                BiomeManager.addBiome(BiomeManager.BiomeType.ICY, new BiomeManager.BiomeEntry(snowySlopesKey, 25));
+            }
+            if (MTConfigs.COMMON_CONFIGS.jaggedPeaksGeneration.get()) {
+                BiomeDictionary.addTypes(jaggedPeaksKey, OVERWORLD, MOUNTAIN, MODIFIED, SNOWY, COLD);
+                BiomeManager.addBiome(BiomeManager.BiomeType.ICY, new BiomeManager.BiomeEntry(jaggedPeaksKey, 20));
+            }
+            if (MTConfigs.COMMON_CONFIGS.stonyPeaksGeneration.get()) {
+                BiomeDictionary.addTypes(stonyPeaksKey, OVERWORLD, MOUNTAIN, MODIFIED, HOT);
+                BiomeManager.addBiome(BiomeManager.BiomeType.WARM, new BiomeManager.BiomeEntry(stonyPeaksKey, 25));
             }
 
             MTSurfaceBuilders.init();

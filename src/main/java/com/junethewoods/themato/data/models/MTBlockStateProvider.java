@@ -124,6 +124,7 @@ public class MTBlockStateProvider extends BlockStateProvider {
         simpleBlock(MTBlocks.POTTED_PAEONIA.get(), models().withExistingParent("potted_paeonia", mcLoc("block/flower_pot_cross")).texture("plant", "block/paeonia"));
 
         // Miscellaneous
+        simpleBlock(MTBlocks.CALCITE.get());
         simpleBlock(MTBlocks.POWDER_SNOW.get());
     }
 

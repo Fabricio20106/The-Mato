@@ -18,12 +18,12 @@
         "stream": true
       },
       {
-        "name": "themato:music/game/left_to_bloom",
+        "name": "themato:music/game/caves_and_cliffs/left_to_bloom",
         "stream": true,
         "volume": 0.4
       },
       {
-        "name": "themato:music/game/one_more_day",
+        "name": "themato:music/game/caves_and_cliffs/one_more_day",
         "stream": true,
         "volume": 0.4,
         "weight": 2
@@ -61,7 +61,7 @@
         "stream": true
       },
       {
-        "name": "themato:music/game/stand_tall",
+        "name": "themato:music/game/caves_and_cliffs/stand_tall",
         "stream": true,
         "volume": 0.4,
         "weight": 2
@@ -83,12 +83,12 @@
         "stream": true
       },
       {
-        "name": "themato:music/game/comforting_memories",
+        "name": "themato:music/game/caves_and_cliffs/comforting_memories",
         "stream": true,
         "volume": 0.4
       },
       {
-        "name": "themato:music/game/infinite_amethyst",
+        "name": "themato:music/game/caves_and_cliffs/infinite_amethyst",
         "stream": true,
         "volume": 0.4
       },
@@ -105,7 +105,81 @@
         "stream": true
       },
       {
-        "name": "themato:music/game/wending",
+        "name": "themato:music/game/caves_and_cliffs/wending",
+        "stream": true,
+        "volume": 0.4
+      }
+    ]
+  },
+  "music.overworld.snowy_slopes": {
+    "sounds": [
+      {
+        "name": "themato:music/game/caves_and_cliffs/an_ordinary_day",
+        "stream": true,
+        "volume": 0.4
+      },
+      {
+        "name": "music/game/hal1",
+        "stream": true
+      },
+      {
+        "name": "music/game/hal2",
+        "stream": true
+      },
+      {
+        "name": "music/game/hal3",
+        "stream": true
+      },
+      {
+        "name": "themato:music/game/caves_and_cliffs/one_more_day",
+        "stream": true,
+        "volume": 0.4
+      },
+      {
+        "name": "themato:music/game/caves_and_cliffs/stand_tall",
+        "stream": true,
+        "volume": 0.4
+      }
+    ]
+  },
+  "music.overworld.stony_peaks": {
+    "sounds": [
+      {
+        "name": "music/game/hal1",
+        "stream": true
+      },
+      {
+        "name": "music/game/hal2",
+        "stream": true
+      },
+      {
+        "name": "music/game/hal3",
+        "stream": true
+      },
+      {
+        "name": "music/game/hal4",
+        "stream": true
+      },
+      {
+        "name": "music/game/piano1",
+        "stream": true
+      },
+      {
+        "name": "music/game/piano2",
+        "stream": true
+      },
+      {
+        "name": "music/game/piano3",
+        "stream": true
+      },
+      {
+        "name": "themato:music/game/caves_and_cliffs/stand_tall",
+        "stream": true,
+        "volume": 0.4,
+        "weight": 2
+      },
+      {
+        "name": "themato:music/game/caves_and_cliffs/wending",
         "stream": true,
         "volume": 0.4
       }
@@ -241,5 +315,79 @@
       }
     ],
     "subtitle": "subtitles.item.bucket.empty"
+  },
+  "block.calcite.break": {
+    "sounds": [
+      {
+        "name": "themato:block/calcite/break1",
+        "volume": 0.9
+      },
+      {
+        "name": "themato:block/calcite/break2",
+        "volume": 0.9
+      },
+      {
+        "name": "themato:block/calcite/break3",
+        "volume": 0.9
+      },
+      {
+        "name": "themato:block/calcite/break4",
+        "volume": 0.9
+      }
+    ],
+    "subtitle": "subtitles.block.generic.break"
+  },
+  "block.calcite.fall": {
+    "sounds": [
+      "themato:block/calcite/step1",
+      "themato:block/calcite/step2",
+      "themato:block/calcite/step3",
+      "themato:block/calcite/step4",
+      "themato:block/calcite/step5",
+      "themato:block/calcite/step6"
+    ]
+  },
+  "block.calcite.hit": {
+    "sounds": [
+      "themato:block/calcite/step1",
+      "themato:block/calcite/step2",
+      "themato:block/calcite/step3",
+      "themato:block/calcite/step4",
+      "themato:block/calcite/step5",
+      "themato:block/calcite/step6"
+    ],
+    "subtitle": "subtitles.block.generic.hit"
+  },
+  "block.calcite.place": {
+    "sounds": [
+      {
+        "name": "themato:block/calcite/place1",
+        "volume": 0.94
+      },
+      {
+        "name": "themato:block/calcite/place2",
+        "volume": 0.94
+      },
+      {
+        "name": "themato:block/calcite/place3",
+        "volume": 0.94
+      },
+      {
+        "name": "themato:block/calcite/place4",
+        "volume": 0.94
+      }
+    ],
+    "subtitle": "subtitles.block.generic.place"
+  },
+  "block.calcite.step": {
+    "sounds": [
+      "themato:block/calcite/step1",
+      "themato:block/calcite/step2",
+      "themato:block/calcite/step3",
+      "themato:block/calcite/step4",
+      "themato:block/calcite/step5",
+      "themato:block/calcite/step6"
+    ],
+    "subtitle": "subtitles.block.generic.footsteps"
   }
 }

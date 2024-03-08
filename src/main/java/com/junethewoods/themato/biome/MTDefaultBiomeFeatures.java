@@ -43,22 +43,34 @@ public class MTDefaultBiomeFeatures {
     }
 
     public static void addPowderSnow(BiomeGenerationSettings.Builder settings) {
-        settings.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, MTFeatures.POWDER_SNOW_BLOB);
+        settings.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, MTFeatures.POWDER_SNOW_VEIN);
+    }
+
+    public static void addCalciteVeins(BiomeGenerationSettings.Builder settings) {
+        settings.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, MTFeatures.CALCITE_VEIN);
+    }
+
+    public static void addStonyPeaksVeins(BiomeGenerationSettings.Builder settings) {
+        addCalciteVeins(settings);
+        settings.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, Features.ORE_ANDESITE);
+        settings.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, Features.ORE_GRANITE);
+        settings.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, Features.ORE_GRAVEL);
     }
 
     public static void addCavesAndCliffsMountainOres(BiomeGenerationSettings.Builder settings) {
         DefaultBiomeFeatures.addExtraEmeralds(settings);
         settings.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, MTFeatures.CAC_IRON_ORE);
+        settings.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, MTFeatures.CAC_COAL_ORE);
+        settings.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, MTFeatures.CAC_EMERALD_ORE);
     }
 
-    public static void globalOverworldGeneration(BiomeGenerationSettings.Builder settings) {
+    public static void globalOverworldGeneration(BiomeGenerationSettings.Builder settings, boolean undergroundVariety) {
         settings.addCarver(GenerationStage.Carving.AIR, ConfiguredCarvers.CAVE);
         settings.addCarver(GenerationStage.Carving.AIR, ConfiguredCarvers.CANYON);
 
         DefaultBiomeFeatures.addDefaultMonsterRoom(settings);
-        DefaultBiomeFeatures.addDefaultUndergroundVariety(settings);
         DefaultBiomeFeatures.addDefaultSprings(settings);
         DefaultBiomeFeatures.addSurfaceFreezing(settings);
-        DefaultBiomeFeatures.addDefaultOverworldLandStructures(settings);
+        if (undergroundVariety) DefaultBiomeFeatures.addDefaultUndergroundVariety(settings);
     }
 }

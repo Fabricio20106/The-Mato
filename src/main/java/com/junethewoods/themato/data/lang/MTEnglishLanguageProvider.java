@@ -118,6 +118,7 @@ public class MTEnglishLanguageProvider extends LanguageProvider {
         addBlock(MTBlocks.POTTED_CYAN_ROSE, "Potted Cyan Rose");
         addBlock(MTBlocks.POTTED_PAEONIA, "Potted Paeonia");
 
+        addBlock(MTBlocks.CALCITE, "Calcite");
         addBlock(MTBlocks.POWDER_SNOW, "Powder Snow");
 
         addItem(MTItems.POWDER_SNOW_BUCKET, "Powder Snow Bucket");
@@ -130,6 +131,9 @@ public class MTEnglishLanguageProvider extends LanguageProvider {
         add("biome.themato.meadow", "Meadow");
         add("biome.themato.grove", "Grove");
         add("biome.themato.frozen_peaks", "Frozen Peaks");
+        add("biome.themato.snowy_slopes", "Snowy Slopes");
+        add("biome.themato.jagged_peaks", "Jagged Peaks");
+        add("biome.themato.stony_peaks", "Stony Peaks");
 
         add("death.attack.freeze", "%1$s froze to death");
         add("death.attack.freeze.player", "%1$s was frozen to death by %2$s");

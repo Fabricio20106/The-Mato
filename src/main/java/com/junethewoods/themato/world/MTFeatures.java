@@ -8,7 +8,6 @@ import com.junethewoods.themato.util.MTTags;
 import com.junethewoods.themato.world.stateprovider.custom.MatoFlowerBlockStateProvider;
 import net.minecraft.block.Blocks;
 import net.minecraft.fluid.Fluids;
-import net.minecraft.tags.BlockTags;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.util.registry.WorldGenRegistries;
 import net.minecraft.world.gen.Heightmap;
@@ -17,7 +16,9 @@ import net.minecraft.world.gen.blockstateprovider.SimpleBlockStateProvider;
 import net.minecraft.world.gen.feature.*;
 import net.minecraft.world.gen.feature.template.RuleTest;
 import net.minecraft.world.gen.feature.template.TagMatchRuleTest;
-import net.minecraft.world.gen.foliageplacer.*;
+import net.minecraft.world.gen.foliageplacer.BlobFoliagePlacer;
+import net.minecraft.world.gen.foliageplacer.DarkOakFoliagePlacer;
+import net.minecraft.world.gen.foliageplacer.FancyFoliagePlacer;
 import net.minecraft.world.gen.placement.AtSurfaceWithExtraConfig;
 import net.minecraft.world.gen.placement.NoiseDependant;
 import net.minecraft.world.gen.placement.Placement;
@@ -136,8 +137,19 @@ public class MTFeatures {
             .decorated(Placement.RANGE.configured(new TopSolidRangeConfig(70, 0, 175))).decorated(Placement.RANGE.configured(new TopSolidRangeConfig(1, 8, 224))
                     .squared().count(20)));
 
-    public static final ConfiguredFeature<?, ?> POWDER_SNOW_BLOB = register("powder_snow_blob", Feature.ORE.configured(new OreFeatureConfig(POWDER_SNOW_REPLACEABLES, MTBlocks.POWDER_SNOW.get().defaultBlockState(), 33))
-            .range(80).squared().count(10));
+    public static final ConfiguredFeature<?, ?> CAC_COAL_ORE = register("cac_coal_ore", Feature.ORE.configured(new OreFeatureConfig(OreFeatureConfig.FillerBlockType.NATURAL_STONE, Blocks.COAL_ORE.defaultBlockState(), 17))
+            .decorated(Placement.RANGE.configured(new TopSolidRangeConfig(70, 0, 175))).decorated(Placement.RANGE.configured(new TopSolidRangeConfig(1, 8, 224))
+                    .squared().count(20)));
+
+    public static final ConfiguredFeature<?, ?> CAC_EMERALD_ORE = register("cac_emerald_ore", Feature.EMERALD_ORE.configured(new ReplaceBlockConfig(Blocks.STONE.defaultBlockState(), Blocks.EMERALD_ORE.defaultBlockState()))
+            .decorated(Placement.RANGE.configured(new TopSolidRangeConfig(80, 0, 175))).decorated(Placement.RANGE.configured(new TopSolidRangeConfig(1, 8, 224))
+                    .squared().count(20)));
+
+    public static final ConfiguredFeature<?, ?> POWDER_SNOW_VEIN = register("powder_snow_vein", Feature.ORE.configured(new OreFeatureConfig(POWDER_SNOW_REPLACEABLES, MTBlocks.POWDER_SNOW.get().defaultBlockState(), 33))
+            .decorated(Placement.RANGE.configured(new TopSolidRangeConfig(80, 0, 160))).squared().count(10));
+
+    public static final ConfiguredFeature<?, ?> CALCITE_VEIN = register("calcite_vein", Feature.ORE.configured(new OreFeatureConfig(OreFeatureConfig.FillerBlockType.NATURAL_STONE, MTBlocks.CALCITE.get().defaultBlockState(), 33))
+            .range(256).squared().count(30));
 
     public static <FC extends IFeatureConfig> ConfiguredFeature<FC, ?> register(String name, ConfiguredFeature<FC, ?> configuredFeature) {
         return Registry.register(WorldGenRegistries.CONFIGURED_FEATURE, TheMato.resourceLoc(name), configuredFeature);

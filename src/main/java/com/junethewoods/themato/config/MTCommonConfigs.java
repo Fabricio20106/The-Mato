@@ -9,6 +9,9 @@ public class MTCommonConfigs {
     public final BooleanValue meadowGeneration;
     public final BooleanValue groveGeneration;
     public final BooleanValue frozenPeaksGeneration;
+    public final BooleanValue snowySlopesGeneration;
+    public final BooleanValue jaggedPeaksGeneration;
+    public final BooleanValue stonyPeaksGeneration;
     public final BooleanValue matoFlowersGeneration;
 
     public MTCommonConfigs(ForgeConfigSpec.Builder builder) {
@@ -20,6 +23,9 @@ public class MTCommonConfigs {
         this.meadowGeneration = builder.comment("Allow Meadows (from 1.18) to generate?").define("meadowGeneration", true);
         this.groveGeneration = builder.comment("Allow Groves (from 1.18) to generate?").define("groveGeneration", true);
         this.frozenPeaksGeneration = builder.comment("Allow Frozen Peaks (from 1.18) to generate?").define("frozenPeaksGeneration", true);
+        this.snowySlopesGeneration = builder.comment("Allow Snowy Slopes (from 1.18) to generate?").define("snowySlopesGeneration", true);
+        this.jaggedPeaksGeneration = builder.comment("Allow Jagged Peaks (from 1.18) to generate?").define("jaggedPeaksGeneration", true);
+        this.stonyPeaksGeneration = builder.comment("Allow Stony Peaks (from 1.18) to generate?").define("stonyPeaksGeneration", true);
         this.matoFlowersGeneration = builder.comment("Allow flowers added by The Mato (roses, cyan roses and paeonias) to generate?").translation("configs.themato.matoFlowersGeneration").define("matoFlowersGeneration", true);
         builder.pop();
     }

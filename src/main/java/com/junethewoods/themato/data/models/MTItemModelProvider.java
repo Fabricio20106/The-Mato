@@ -100,6 +100,8 @@ public class MTItemModelProvider extends ItemModelProvider {
         withExistingParent("cactus_pressure_plate");
         withExistingParent("cactus_button", "_inventory");
 
+        withExistingParent("calcite");
+
         standard(generated, "pink_ipe_sign");
         standard(generated, "purple_ipe_sign");
         standard(generated, "red_ipe_sign");

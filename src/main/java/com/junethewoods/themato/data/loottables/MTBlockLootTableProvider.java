@@ -125,6 +125,7 @@ public class MTBlockLootTableProvider extends BlockLootTables {
         dropPottedContents(MTBlocks.POTTED_CYAN_ROSE.get());
         dropPottedContents(MTBlocks.POTTED_PAEONIA.get());
 
+        dropSelf(MTBlocks.CALCITE.get());
         add(MTBlocks.POWDER_SNOW.get(), noDrop());
     }
 
