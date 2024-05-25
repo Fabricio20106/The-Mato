@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "themato:item/dyed_water_bucket_overlay",
+    "layer1": "themato:item/dyed_water_bucket"
+  }
+}

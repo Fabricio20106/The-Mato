@@ -6,7 +6,6 @@ import net.minecraftforge.client.model.generators.ItemModelBuilder;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
 import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
-import net.minecraftforge.fml.common.Mod;
 
 import javax.annotation.Nonnull;
 
@@ -102,6 +101,7 @@ public class MTItemModelProvider extends ItemModelProvider {
 
         withExistingParent("calcite");
 
+        getBuilder("cauldron").parent(generated).texture("layer0", mcLoc("item/cauldron"));
         standard(generated, "pink_ipe_sign");
         standard(generated, "purple_ipe_sign");
         standard(generated, "red_ipe_sign");
@@ -110,6 +110,7 @@ public class MTItemModelProvider extends ItemModelProvider {
         standard(generated, "cactus_sign");
         standard(generated, "yellow_ipe_boat");
         standard(generated, "powder_snow_bucket");
+        getBuilder("dyed_water_bucket").parent(generated).texture("layer0", modLoc("item/dyed_water_bucket_overlay")).texture("layer1", modLoc("item/dyed_water_bucket"));
         standard(generated, "liquid_cactus_bucket");
         standard(generated, "cactus_candy");
 
@@ -123,16 +124,16 @@ public class MTItemModelProvider extends ItemModelProvider {
         block(generated, "paeonia");
     }
 
-    public ItemModelBuilder standard(ModelFile parent, String name) {
-        return getBuilder(name).parent(parent).texture("layer0", "item/" + name);
+    public void standard(ModelFile parent, String name) {
+        getBuilder(name).parent(parent).texture("layer0", "item/" + name);
     }
 
-    public ItemModelBuilder block(ModelFile parent, String name) {
-        return getBuilder(name).parent(parent).texture("layer0", "block/" + name);
+    public void block(ModelFile parent, String name) {
+        getBuilder(name).parent(parent).texture("layer0", "block/" + name);
     }
 
-    public ItemModelBuilder withExistingParent(String name) {
-        return withExistingParent(name, modLoc("block/" + name));
+    public void withExistingParent(String name) {
+        withExistingParent(name, modLoc("block/" + name));
     }
 
     public ItemModelBuilder withExistingParent(String name, String extras) {

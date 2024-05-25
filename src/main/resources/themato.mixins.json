@@ -6,9 +6,11 @@
   "compatibilityLevel": "JAVA_8",
   "mixins": [
     "MTAbstractFurnaceTileEntityMixin",
+    "MTBootstrapMixin",
     "MTCactusBlockMixin",
-    "MTWorldCarverMixin",
-    "MTTreeFeatureMixin"
+    "MTCauldronBlockMixin",
+    "MTTreeFeatureMixin",
+    "MTWorldCarverMixin"
   ],
   "client": [],
   "server": [],

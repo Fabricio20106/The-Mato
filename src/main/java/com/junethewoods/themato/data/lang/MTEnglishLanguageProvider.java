@@ -6,14 +6,17 @@ import com.junethewoods.themato.item.MTItems;
 import net.minecraft.data.DataGenerator;
 import net.minecraftforge.common.data.LanguageProvider;
 
+import javax.annotation.Nonnull;
+
 public class MTEnglishLanguageProvider extends LanguageProvider {
     public MTEnglishLanguageProvider(DataGenerator generator) {
         super(generator, TheMato.MOD_ID, "en_us");
     }
 
     @Override
+    @Nonnull
     public String getName() {
-        return "The Mato - English Language Provider";
+        return "The Mato - English (US) Language Provider";
     }
 
     @Override
@@ -120,9 +123,16 @@ public class MTEnglishLanguageProvider extends LanguageProvider {
 
         addBlock(MTBlocks.CALCITE, "Calcite");
         addBlock(MTBlocks.POWDER_SNOW, "Powder Snow");
+        addBlock(MTBlocks.CAULDRON, "Cauldron");
+        addBlock(MTBlocks.WATER_CAULDRON, "Water Cauldron");
+        addBlock(MTBlocks.LAVA_CAULDRON, "Lava Cauldron");
+        addBlock(MTBlocks.MILK_CAULDRON, "Milk Cauldron");
+        addBlock(MTBlocks.DYED_WATER_CAULDRON, "Dyed Water Cauldron");
+        addBlock(MTBlocks.POWDER_SNOW_CAULDRON, "Powder Snow Cauldron");
 
         addItem(MTItems.POWDER_SNOW_BUCKET, "Powder Snow Bucket");
         addItem(MTItems.LIQUID_CACTUS_BUCKET, "Liquid Cactus Bucket");
+        addItem(MTItems.DYED_WATER_BUCKET, "Dyed Water Bucket");
         addItem(MTItems.CACTUS_CANDY, "Cactus Candy");
 
         add("itemGroup.themato_tab", "The Mato");
@@ -144,5 +154,7 @@ public class MTEnglishLanguageProvider extends LanguageProvider {
         add("configs.themato.theWoodsGeneration.tooltip", "Allow The Woods (biome) to generate?");
         add("configs.themato.matoFlowersGeneration", "The Mato Flower Generation");
         add("configs.themato.matoFlowersGeneration.tooltip", "Allow flowers added by The Mato (roses, cyan roses and paeonias) to generate?");
+
+        add("tooltip.themato.dyed_water_color", "Color: %s");
     }
 }

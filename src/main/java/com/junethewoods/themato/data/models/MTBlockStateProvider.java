@@ -23,7 +23,7 @@ public class MTBlockStateProvider extends BlockStateProvider {
     @Nonnull
     @Override
     public String getName() {
-        return "The Mato - Block States & Models";
+        return "The Mato - Block State Definitions & Models";
     }
 
     @Override
@@ -125,7 +125,6 @@ public class MTBlockStateProvider extends BlockStateProvider {
 
         // Miscellaneous
         simpleBlock(MTBlocks.CALCITE.get());
-        simpleBlock(MTBlocks.POWDER_SNOW.get());
     }
 
     public void pressurePlate(Block pressurePlate, ResourceLocation planks) {

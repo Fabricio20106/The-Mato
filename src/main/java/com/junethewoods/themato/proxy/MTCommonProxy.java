@@ -4,6 +4,7 @@ import com.google.common.collect.ImmutableMap;
 import com.junethewoods.themato.biome.MTBiomes;
 import com.junethewoods.themato.blockentity.MTBlockEntities;
 import com.junethewoods.themato.block.MTBlocks;
+import com.junethewoods.themato.cauldron.CauldronInteraction;
 import com.junethewoods.themato.config.MTConfigs;
 import com.junethewoods.themato.item.MTItems;
 import com.junethewoods.themato.sound.MTSounds;
@@ -52,6 +53,8 @@ public class MTCommonProxy {
                     .put(MTBlocks.JUNIUM_LOG.get(), MTBlocks.STRIPPED_JUNIUM_LOG.get())
                     .put(MTBlocks.JUNIUM_WOOD.get(), MTBlocks.STRIPPED_JUNIUM_WOOD.get()).build();
 
+            CauldronInteraction.bootstrap();
+
             RegistryKey<Biome> ipeForestKey = RegistryKey.create(ForgeRegistries.Keys.BIOMES, MTBiomes.IPE_FOREST.getId());
             RegistryKey<Biome> theWoodsKey = RegistryKey.create(ForgeRegistries.Keys.BIOMES, MTBiomes.THE_WOODS.getId());
             RegistryKey<Biome> meadowKey = RegistryKey.create(ForgeRegistries.Keys.BIOMES, MTBiomes.MEADOW.getId());
@@ -69,27 +72,27 @@ public class MTCommonProxy {
                 BiomeDictionary.addTypes(theWoodsKey, FOREST, OVERWORLD, DENSE);
                 BiomeManager.addBiome(BiomeManager.BiomeType.COOL, new BiomeManager.BiomeEntry(theWoodsKey, 15));
             }
-            if (MTConfigs.COMMON_CONFIGS.meadowGeneration.get()) {
+            if (MTConfigs.CAVES_AND_CLIFFS_CONFIGS.meadowGeneration.get()) {
                 BiomeDictionary.addTypes(meadowKey, MOUNTAIN, OVERWORLD, LUSH);
                 BiomeManager.addBiome(BiomeManager.BiomeType.COOL, new BiomeManager.BiomeEntry(meadowKey, 20));
             }
-            if (MTConfigs.COMMON_CONFIGS.groveGeneration.get()) {
+            if (MTConfigs.CAVES_AND_CLIFFS_CONFIGS.groveGeneration.get()) {
                 BiomeDictionary.addTypes(groveKey, HILLS, OVERWORLD, SNOWY, COLD, FOREST, CONIFEROUS);
                 BiomeManager.addBiome(BiomeManager.BiomeType.ICY, new BiomeManager.BiomeEntry(groveKey, 35));
             }
-            if (MTConfigs.COMMON_CONFIGS.frozenPeaksGeneration.get()) {
+            if (MTConfigs.CAVES_AND_CLIFFS_CONFIGS.frozenPeaksGeneration.get()) {
                 BiomeDictionary.addTypes(frozenPeaksKey, MOUNTAIN, OVERWORLD, SNOWY, COLD);
                 BiomeManager.addBiome(BiomeManager.BiomeType.ICY, new BiomeManager.BiomeEntry(frozenPeaksKey, 25));
             }
-            if (MTConfigs.COMMON_CONFIGS.snowySlopesGeneration.get()) {
+            if (MTConfigs.CAVES_AND_CLIFFS_CONFIGS.snowySlopesGeneration.get()) {
                 BiomeDictionary.addTypes(snowySlopesKey, OVERWORLD, MOUNTAIN, SNOWY, COLD);
                 BiomeManager.addBiome(BiomeManager.BiomeType.ICY, new BiomeManager.BiomeEntry(snowySlopesKey, 25));
             }
-            if (MTConfigs.COMMON_CONFIGS.jaggedPeaksGeneration.get()) {
+            if (MTConfigs.CAVES_AND_CLIFFS_CONFIGS.jaggedPeaksGeneration.get()) {
                 BiomeDictionary.addTypes(jaggedPeaksKey, OVERWORLD, MOUNTAIN, MODIFIED, SNOWY, COLD);
                 BiomeManager.addBiome(BiomeManager.BiomeType.ICY, new BiomeManager.BiomeEntry(jaggedPeaksKey, 20));
             }
-            if (MTConfigs.COMMON_CONFIGS.stonyPeaksGeneration.get()) {
+            if (MTConfigs.CAVES_AND_CLIFFS_CONFIGS.stonyPeaksGeneration.get()) {
                 BiomeDictionary.addTypes(stonyPeaksKey, OVERWORLD, MOUNTAIN, MODIFIED, HOT);
                 BiomeManager.addBiome(BiomeManager.BiomeType.WARM, new BiomeManager.BiomeEntry(stonyPeaksKey, 25));
             }

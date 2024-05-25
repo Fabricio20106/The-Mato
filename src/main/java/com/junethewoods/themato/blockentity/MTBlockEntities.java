@@ -2,6 +2,7 @@ package com.junethewoods.themato.blockentity;
 
 import com.junethewoods.themato.TheMato;
 import com.junethewoods.themato.block.MTBlocks;
+import com.junethewoods.themato.blockentity.custom.DyedWaterCauldronBlockEntity;
 import com.junethewoods.themato.blockentity.custom.MTSignBlockEntity;
 import net.minecraft.tileentity.TileEntityType;
 import net.minecraftforge.fml.RegistryObject;
@@ -15,4 +16,7 @@ public class MTBlockEntities {
             MTBlocks.PINK_IPE_SIGN.get(), MTBlocks.PINK_IPE_WALL_SIGN.get(), MTBlocks.PURPLE_IPE_SIGN.get(), MTBlocks.PURPLE_IPE_WALL_SIGN.get(), MTBlocks.RED_IPE_SIGN.get(),
             MTBlocks.RED_IPE_WALL_SIGN.get(), MTBlocks.YELLOW_IPE_SIGN.get(), MTBlocks.YELLOW_IPE_WALL_SIGN.get(), MTBlocks.JUNIUM_SIGN.get(), MTBlocks.JUNIUM_WALL_SIGN.get(), MTBlocks.CACTUS_SIGN.get(), MTBlocks.CACTUS_WALL_SIGN.get())
             .build(null));
+
+    public static final RegistryObject<TileEntityType<DyedWaterCauldronBlockEntity>> DYED_WATER_CAULDRON = BLOCK_ENTITIES.register("dyed_water_cauldron", () -> TileEntityType.Builder.of(DyedWaterCauldronBlockEntity::new,
+            MTBlocks.DYED_WATER_CAULDRON.get()).build(null));
 }

@@ -34,7 +34,7 @@ public class PowderSnowBlock extends Block {
     // TODO: Fix weird rendering when besides a non-full block.
     @Override
     public boolean skipRendering(BlockState state, BlockState state1, Direction direction) {
-        return state1.is(this) ||  super.skipRendering(state, state1, direction);
+        return state1.is(this) ? true : super.skipRendering(state, state1, direction);
     }
 
     @Override

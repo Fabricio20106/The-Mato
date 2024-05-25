@@ -5,8 +5,10 @@ import com.junethewoods.themato.block.custom.MTStandingSignBlock;
 import com.junethewoods.themato.block.custom.MTWallSignBlock;
 import com.junethewoods.themato.block.custom.PowderSnowBlock;
 import com.junethewoods.themato.block.custom.StrippedCactusBlock;
+import com.junethewoods.themato.block.custom.cauldron.*;
 import com.junethewoods.themato.block.material.MTMaterialColors;
 import com.junethewoods.themato.block.material.MTMaterials;
+import com.junethewoods.themato.cauldron.CauldronInteraction;
 import com.junethewoods.themato.sound.MTSoundTypes;
 import com.junethewoods.themato.util.MTTags;
 import com.junethewoods.themato.util.MTWoodTypes;
@@ -130,9 +132,17 @@ public class MTBlocks {
     public static final RegistryObject<Block> CACTUS_SIGN = BLOCKS.register("cactus_sign", () -> new MTStandingSignBlock(AbstractBlock.Properties.copy(CACTUS_PLANKS.get()).noCollission().strength(1), MTWoodTypes.CACTUS));
     public static final RegistryObject<Block> CACTUS_WALL_SIGN = BLOCKS.register("cactus_wall_sign", () -> new MTWallSignBlock(AbstractBlock.Properties.copy(CACTUS_PLANKS.get()).noCollission().strength(1).lootFrom(MTBlocks.CACTUS_SIGN), MTWoodTypes.CACTUS));
 
-    // Plants
+    // Miscellaneous from 1.18
     public static final RegistryObject<Block> CALCITE = BLOCKS.register("calcite", () -> new Block(AbstractBlock.Properties.of(Material.STONE, MaterialColor.TERRACOTTA_WHITE).strength(0.75F).sound(MTSoundTypes.CALCITE)));
-    public static final RegistryObject<Block> POWDER_SNOW = BLOCKS.register("powder_snow", () -> new PowderSnowBlock(AbstractBlock.Properties.of(MTMaterials.POWDER_SNOW).requiresCorrectToolForDrops().strength(0.25F).sound(MTSoundTypes.POWDER_SNOW))); // .dynamicShape()
+    public static final RegistryObject<Block> POWDER_SNOW = BLOCKS.register("powder_snow", () -> new PowderSnowBlock(AbstractBlock.Properties.of(MTMaterials.POWDER_SNOW).dynamicShape().requiresCorrectToolForDrops().strength(0.25F).sound(MTSoundTypes.POWDER_SNOW)));
+    public static final RegistryObject<Block> CAULDRON = BLOCKS.register("cauldron", () -> new EmptyCauldronBlock(AbstractBlock.Properties.copy(Blocks.CAULDRON)));
+    public static final RegistryObject<Block> WATER_CAULDRON = BLOCKS.register("water_cauldron", () -> new LayeredCauldronBlock(AbstractBlock.Properties.copy(Blocks.CAULDRON), LayeredCauldronBlock.RAIN, CauldronInteraction.WATER));
+    public static final RegistryObject<Block> DYED_WATER_CAULDRON = BLOCKS.register("dyed_water_cauldron", () -> new DyedWaterCauldronBlock(0x3F76E4, AbstractBlock.Properties.copy(Blocks.CAULDRON)));
+    public static final RegistryObject<Block> LAVA_CAULDRON = BLOCKS.register("lava_cauldron", () -> new LavaCauldronBlock(AbstractBlock.Properties.copy(Blocks.CAULDRON).lightLevel((light) -> 15)));
+    public static final RegistryObject<Block> POWDER_SNOW_CAULDRON = BLOCKS.register("powder_snow_cauldron", () -> new PowderSnowCauldronBlock(AbstractBlock.Properties.copy(Blocks.CAULDRON), LayeredCauldronBlock.SNOW, CauldronInteraction.POWDER_SNOW));
+    public static final RegistryObject<Block> MILK_CAULDRON = BLOCKS.register("milk_cauldron", () -> new LayeredCauldronBlock(AbstractBlock.Properties.copy(Blocks.CAULDRON), LayeredCauldronBlock.RAIN, CauldronInteraction.MILK));
+
+    // Plants
     public static final RegistryObject<Block> ROSE = BLOCKS.register("rose", () -> new FlowerBlock(Effects.REGENERATION, 10, AbstractBlock.Properties.copy(Blocks.POPPY).sound(SoundType.CROP)));
     public static final RegistryObject<Block> CYAN_ROSE = BLOCKS.register("cyan_rose", () -> new FlowerBlock(Effects.ABSORPTION, 6, AbstractBlock.Properties.copy(Blocks.POPPY).sound(SoundType.CROP)));
     public static final RegistryObject<Block> PAEONIA = BLOCKS.register("paeonia", () -> new FlowerBlock(Effects.DIG_SPEED, 8, AbstractBlock.Properties.copy(Blocks.POPPY).sound(SoundType.CROP)));

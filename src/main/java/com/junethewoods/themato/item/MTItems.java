@@ -2,9 +2,7 @@ package com.junethewoods.themato.item;
 
 import com.junethewoods.themato.TheMato;
 import com.junethewoods.themato.block.MTBlocks;
-import com.junethewoods.themato.item.custom.BlockBucketItem;
-import com.junethewoods.themato.item.custom.LiquidCactusBucketItem;
-import com.junethewoods.themato.item.custom.MTFoods;
+import com.junethewoods.themato.item.custom.*;
 import com.junethewoods.themato.util.MTTab;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
@@ -104,6 +102,7 @@ public class MTItems {
 
     // Miscellaneous Blocks
     public static final RegistryObject<Item> CALCITE = ITEMS.register("calcite", () -> new BlockItem(MTBlocks.CALCITE.get(), new Item.Properties().tab(MTTab.TAB)));
+    public static final RegistryObject<Item> CAULDRON = ITEMS.register("cauldron", () -> new CauldronItem(MTBlocks.CAULDRON.get(), new Item.Properties().tab(MTTab.TAB), MTBlocks.WATER_CAULDRON.get(), MTBlocks.LAVA_CAULDRON.get(), MTBlocks.POWDER_SNOW_CAULDRON.get(), MTBlocks.MILK_CAULDRON.get(), MTBlocks.DYED_WATER_CAULDRON.get()));
 
     public static final RegistryObject<Item> PINK_IPE_SIGN = ITEMS.register("pink_ipe_sign", () -> new SignItem(new Item.Properties().stacksTo(16).tab(MTTab.TAB), MTBlocks.PINK_IPE_SIGN.get(), MTBlocks.PINK_IPE_WALL_SIGN.get()));
     public static final RegistryObject<Item> PURPLE_IPE_SIGN = ITEMS.register("purple_ipe_sign", () -> new SignItem(new Item.Properties().stacksTo(16).tab(MTTab.TAB), MTBlocks.PURPLE_IPE_SIGN.get(), MTBlocks.PURPLE_IPE_WALL_SIGN.get()));
@@ -117,6 +116,7 @@ public class MTItems {
 
     // Actual Items
     public static final RegistryObject<Item> POWDER_SNOW_BUCKET = ITEMS.register("powder_snow_bucket", () -> new BlockBucketItem(MTBlocks.POWDER_SNOW.get(), new Item.Properties().stacksTo(1).craftRemainder(Items.BUCKET).tab(MTTab.TAB)));
+    public static final RegistryObject<Item> DYED_WATER_BUCKET = ITEMS.register("dyed_water_bucket", () -> new DyedWaterBucketItem(new Item.Properties().stacksTo(1).craftRemainder(Items.BUCKET).tab(MTTab.TAB)));
     public static final RegistryObject<Item> LIQUID_CACTUS_BUCKET = ITEMS.register("liquid_cactus_bucket", () -> new LiquidCactusBucketItem(new Item.Properties().stacksTo(1).craftRemainder(Items.BUCKET).tab(MTTab.TAB)));
     public static final RegistryObject<Item> CACTUS_CANDY = ITEMS.register("cactus_candy", () -> new Item(new Item.Properties().food(MTFoods.CACTUS_CANDY).tab(MTTab.TAB)));
 }

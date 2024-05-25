@@ -5,6 +5,7 @@ import com.junethewoods.themato.proxy.MTClientProxy;
 import com.junethewoods.themato.proxy.MTCommonProxy;
 import com.junethewoods.themato.proxy.MTServerProxy;
 import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.common.ForgeMod;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.DistExecutor;
 import net.minecraftforge.fml.ModLoadingContext;
@@ -24,6 +25,8 @@ public class TheMato {
         MinecraftForge.EVENT_BUS.register(this);
         proxy = DistExecutor.safeRunForDist(() -> MTClientProxy::new, () -> MTServerProxy::new);
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, MTConfigs.COMMON_SPEC, "jtw-mods/themato-common.toml");
+        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, MTConfigs.CAVES_AND_CLIFFS_SPEC, "jtw-mods/themato-cavesandcliffs.toml");
+        ForgeMod.enableMilkFluid();
         MTConfigs.init();
     }
 

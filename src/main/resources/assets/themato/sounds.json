@@ -88,6 +88,16 @@
         "volume": 0.4
       },
       {
+        "name": "themato:music/game/tricky_trials/eld_unknown",
+        "stream": true,
+        "volume": 0.4
+      },
+      {
+        "name": "themato:music/game/tricky_trials/endless",
+        "stream": true,
+        "volume": 0.4
+      },
+      {
         "name": "themato:music/game/caves_and_cliffs/infinite_amethyst",
         "stream": true,
         "volume": 0.4
@@ -99,6 +109,11 @@
       {
         "name": "music/game/nuance2",
         "stream": true
+      },
+      {
+        "name": "themato:music/game/tricky_trials/pokopoko",
+        "stream": true,
+        "volume": 0.8
       },
       {
         "name": "music/game/piano3",
@@ -131,6 +146,11 @@
         "stream": true
       },
       {
+        "name": "themato:music/game/tricky_trials/pokopoko",
+        "stream": true,
+        "volume": 0.8
+      },
+      {
         "name": "themato:music/game/caves_and_cliffs/one_more_day",
         "stream": true,
         "volume": 0.4
@@ -151,6 +171,16 @@
       {
         "name": "music/game/hal2",
         "stream": true
+      },
+      {
+        "name": "themato:music/game/tricky_trials/eld_unknown",
+        "volume": 0.4,
+        "weight": 2
+      },
+      {
+        "name": "themato:music/game/tricky_trials/endless",
+        "stream": true,
+        "volume": 0.4
       },
       {
         "name": "music/game/hal3",
@@ -177,6 +207,68 @@
         "stream": true,
         "volume": 0.4,
         "weight": 2
+      },
+      {
+        "name": "themato:music/game/caves_and_cliffs/wending",
+        "stream": true,
+        "volume": 0.4
+      }
+    ]
+  },
+  "music.overworld.jagged_peaks": {
+    "sounds": [
+      {
+        "name": "themato:music/game/tricky_trials/eld_unknown",
+        "stream": true,
+        "volume": 0.4
+      },
+      {
+        "name": "themato:music/game/tricky_trials/endless",
+        "stream": true,
+        "volume": 0.4
+      },
+      {
+        "name": "themato:music/game/caves_and_cliffs/floating_dream",
+        "stream": true,
+        "volume": 0.4
+      },
+      {
+        "name": "music/game/hal1",
+        "stream": true
+      },
+      {
+        "name": "music/game/hal2",
+        "stream": true
+      },
+      {
+        "name": "music/game/nuance1",
+        "stream": true
+      },
+      {
+        "name": "music/game/nuance2",
+        "stream": true
+      },
+      {
+        "name": "music/game/piano1",
+        "stream": true
+      },
+      {
+        "name": "music/game/piano2",
+        "stream": true
+      },
+      {
+        "name": "music/game/piano3",
+        "stream": true
+      },
+      {
+        "name": "themato:music/game/tricky_trials/pokopoko",
+        "stream": true,
+        "volume": 0.8
+      },
+      {
+        "name": "themato:music/game/caves_and_cliffs/stand_tall",
+        "stream": true,
+        "volume": 0.4
       },
       {
         "name": "themato:music/game/caves_and_cliffs/wending",

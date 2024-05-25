@@ -2,10 +2,12 @@ package com.junethewoods.themato.data.loottables;
 
 import com.junethewoods.themato.TheMato;
 import com.junethewoods.themato.block.MTBlocks;
+import com.junethewoods.themato.item.MTItems;
 import net.minecraft.advancements.criterion.EnchantmentPredicate;
 import net.minecraft.advancements.criterion.ItemPredicate;
 import net.minecraft.advancements.criterion.MinMaxBounds;
 import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
 import net.minecraft.data.loot.BlockLootTables;
 import net.minecraft.enchantment.Enchantments;
 import net.minecraft.item.Items;
@@ -127,6 +129,12 @@ public class MTBlockLootTableProvider extends BlockLootTables {
 
         dropSelf(MTBlocks.CALCITE.get());
         add(MTBlocks.POWDER_SNOW.get(), noDrop());
+        dropOther(MTBlocks.CAULDRON.get(), MTItems.CAULDRON.get());
+        dropOther(MTBlocks.WATER_CAULDRON.get(), MTItems.CAULDRON.get());
+        dropOther(MTBlocks.LAVA_CAULDRON.get(), MTItems.CAULDRON.get());
+        dropOther(MTBlocks.MILK_CAULDRON.get(), MTItems.CAULDRON.get());
+        dropOther(MTBlocks.DYED_WATER_CAULDRON.get(), MTItems.CAULDRON.get());
+        dropOther(MTBlocks.POWDER_SNOW_CAULDRON.get(), MTItems.CAULDRON.get());
     }
 
     @Override

@@ -29,7 +29,7 @@ public class MTLootTableProvider extends LootTableProvider {
     }
 
     @Override
-    protected void validate(Map<ResourceLocation, LootTable> map, ValidationTracker validationtracker) {
-        map.forEach((id, table) -> LootTableManager.validate(validationtracker, id, table));
+    protected void validate(Map<ResourceLocation, LootTable> map, ValidationTracker validationTracker) {
+        map.forEach((id, table) -> LootTableManager.validate(validationTracker, id, table));
     }
 }
