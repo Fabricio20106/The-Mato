@@ -31,7 +31,7 @@ logoFile="themato.png" #optional
 # A text field displayed in the mod UI
 credits="Gabriel" #optional
 # A text field displayed in the mod UI
-authors="JuneTheWoods" #optional
+authors="isabellawoods" #optional
 # The description text for the mod (multi line!) (#mandatory)
 description='''The Mato is a mod that adds various new biomes and blocks based either on features from Brazil or old Minecraft features. Credits to Gabriel for ideas on items for each region.'''
 # A dependency - use the . to indicate dependency for a specific modid. Dependencies are optional.

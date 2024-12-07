@@ -22,7 +22,7 @@ apply plugin: 'org.spongepowered.mixin'
 
 version = '1.16.5-v0.3.4'
 // http://maven.apache.org/guides/mini/guide-naming-conventions.html
-group = 'com.junethewoods.themato'
+group = 'melonystudios.themato'
 archivesBaseName = 'TheMato'
 
 // Mojang ships Java 8 to end users, so your mod should target Java 8.
@@ -204,12 +204,12 @@ jar {
     manifest {
         attributes([
             "Specification-Title": "The Mato",
-            "Specification-Vendor": "JuneTheWoods",
+            "Specification-Vendor": "isabellawoods",
             // We are version one of ourselves.
             "Specification-Version": "1",
             "Implementation-Title": project.name,
             "Implementation-Version": "${version}",
-            "Implementation-Vendor" :"JuneTheWoods",
+            "Implementation-Vendor" :"isabellawoods",
             "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ"),
             "MixinConfigs": "themato.mixins.json"
         ])
