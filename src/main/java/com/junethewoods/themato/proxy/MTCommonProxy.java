@@ -6,6 +6,7 @@ import com.junethewoods.themato.blockentity.MTBlockEntities;
 import com.junethewoods.themato.block.MTBlocks;
 import com.junethewoods.themato.cauldron.CauldronInteraction;
 import com.junethewoods.themato.config.MTConfigs;
+import com.junethewoods.themato.effect.MTEffects;
 import com.junethewoods.themato.item.MTItems;
 import com.junethewoods.themato.sound.MTSounds;
 import com.junethewoods.themato.util.MTWoodTypes;
@@ -35,6 +36,7 @@ public class MTCommonProxy {
         MTBlockEntities.BLOCK_ENTITIES.register(eventBus);
         MTBiomes.BIOMES.register(eventBus);
         MTStateProviders.STATE_PROVIDERS.register(eventBus);
+        MTEffects.EFFECTS.register(eventBus);
 
         eventBus.addListener(this::commonSetup);
     }
@@ -94,7 +96,7 @@ public class MTCommonProxy {
             }
             if (MTConfigs.CAVES_AND_CLIFFS_CONFIGS.stonyPeaksGeneration.get()) {
                 BiomeDictionary.addTypes(stonyPeaksKey, OVERWORLD, MOUNTAIN, MODIFIED, HOT);
-                BiomeManager.addBiome(BiomeManager.BiomeType.WARM, new BiomeManager.BiomeEntry(stonyPeaksKey, 25));
+                BiomeManager.addBiome(BiomeManager.BiomeType.DESERT, new BiomeManager.BiomeEntry(stonyPeaksKey, 25));
             }
 
             MTSurfaceBuilders.init();

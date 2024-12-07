@@ -4,9 +4,9 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 
 public class CavesAndCliffsUtils {
-    public static ItemStack createFilledResult(ItemStack filledStack, PlayerEntity player, ItemStack emptyStack, boolean bool) {
+    public static ItemStack createFilledResult(ItemStack filledStack, PlayerEntity player, ItemStack emptyStack, boolean preventDuplicates) {
         boolean flag = player.abilities.instabuild;
-        if (bool && flag) {
+        if (preventDuplicates && flag) {
             if (!player.inventory.contains(emptyStack)) {
                 player.inventory.add(emptyStack);
             }

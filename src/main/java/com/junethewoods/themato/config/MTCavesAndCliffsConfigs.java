@@ -14,6 +14,7 @@ public class MTCavesAndCliffsConfigs {
     // Blocks
     public final ForgeConfigSpec.DoubleValue waterCauldronFillChance;
     public final ForgeConfigSpec.DoubleValue powderSnowCauldronFillChance;
+    public final ForgeConfigSpec.BooleanValue lavaCauldronsLeaveLava;
 
     public MTCavesAndCliffsConfigs(ForgeConfigSpec.Builder builder) {
         builder.push("worldGeneration");
@@ -28,6 +29,7 @@ public class MTCavesAndCliffsConfigs {
         builder.push("blocks");
         this.waterCauldronFillChance = builder.comment("Chance of Water Cauldrons getting filled during rain.").defineInRange("waterCauldronFillChance", 0.05, 0, 1);
         this.powderSnowCauldronFillChance = builder.comment("Chance of Powder Snow Cauldrons getting filled during snowfalls.").defineInRange("powderSnowCauldronFillChance", 0.1, 0, 1);
+        this.lavaCauldronsLeaveLava = builder.comment("Whether Lava Cauldrons, when blown up, leave lava in their place.").define("lavaCauldronsLeaveLava", true);
         builder.pop();
     }
 }

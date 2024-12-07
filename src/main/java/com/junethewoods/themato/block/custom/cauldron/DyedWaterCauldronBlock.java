@@ -25,7 +25,7 @@ public class DyedWaterCauldronBlock extends LayeredCauldronBlock {
     @Override
     public TileEntity createTileEntity(BlockState state, IBlockReader world) {
         DyedWaterCauldronBlockEntity dyedWaterCauldron = MTBlockEntities.DYED_WATER_CAULDRON.get().create();
-        if (dyedWaterCauldron != null) dyedWaterCauldron.setDyedWaterColor(this.dyedWaterColor);
+        if (dyedWaterCauldron != null) dyedWaterCauldron.setWaterColor(this.dyedWaterColor);
         return dyedWaterCauldron;
     }
 

@@ -16,6 +16,7 @@ import net.minecraft.item.Items;
 import net.minecraft.potion.PotionUtils;
 import net.minecraft.potion.Potions;
 import net.minecraft.stats.Stats;
+import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -145,9 +146,10 @@ public interface CauldronInteraction {
         // Dyed Water
         DYED_WATER.put(Items.BUCKET, (state, world, pos, player, hand, stack) -> {
             ItemStack dyedBucketStack = new ItemStack(MTItems.DYED_WATER_BUCKET.get());
-            if (state.hasTileEntity() && world.getBlockEntity(pos) instanceof DyedWaterCauldronBlockEntity) {
-                DyedWaterCauldronBlockEntity cauldronBlockEntity = (DyedWaterCauldronBlockEntity) world.getBlockEntity(pos);
-                if (cauldronBlockEntity != null) dyedBucketStack.getOrCreateTag().putInt("dyed_water_color", cauldronBlockEntity.getDyedWaterColor());
+            TileEntity blockEntity = world.getBlockEntity(pos);
+            if (blockEntity instanceof DyedWaterCauldronBlockEntity) {
+                DyedWaterCauldronBlockEntity cauldronBlockEntity = (DyedWaterCauldronBlockEntity) blockEntity;
+                dyedBucketStack.getOrCreateTag().putInt("dyed_water_color", cauldronBlockEntity.getWaterColor());
             }
             return fillBucket(state, world, pos, player, hand, stack, dyedBucketStack, (state1) -> true, SoundEvents.BUCKET_FILL);
         });

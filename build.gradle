@@ -1,12 +1,12 @@
 buildscript {
     repositories {
+        mavenCentral()
         maven {
             url = 'https://maven.minecraftforge.net'
         }
         maven {
             url = 'https://repo.spongepowered.org/maven'
         }
-        mavenCentral()
     }
     dependencies {
         classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '4.1.+', changing: true
@@ -20,7 +20,7 @@ apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
 apply plugin: 'org.spongepowered.mixin'
 
-version = '1.16.5-v0.3.2'
+version = '1.16.5-v0.3.4'
 // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 group = 'com.junethewoods.themato'
 archivesBaseName = 'TheMato'
@@ -42,7 +42,7 @@ minecraft {
     // Use non-default mappings at your own risk. They may not always work.
     // Simply re-run your setup task after changing the mappings to update your workspace.
     mappings channel: 'official', version: '1.16.5'
-    // An Srg-named sources jar is made by default. Uncomment this to disable.
+    // A Srg-named sources jar is made by default. Uncomment this to disable.
     // makeObfSourceJar = false
 
     accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg')
@@ -51,6 +51,21 @@ minecraft {
     // These can be tweaked, removed, or duplicated as needed.
     runs {
         client {
+            // Copied from Tinker's Construct repository.
+            if (project.hasProperty('mc_uuid')) {
+                // Your uuid without any dashes in the middle.
+                args '--uuid', project.getProperty('mc_uuid')
+            }
+            if (project.hasProperty('mc_username')) {
+                // Your username/display name, this is the name that shows up in chat.
+                // Note: This is not your email, even if you have a Mojang account.
+                args '--username', project.getProperty('mc_username')
+            }
+            if (project.hasProperty('mc_accessToken')) {
+                // Your access token, you can find it in your '.minecraft/launcher_profiles.json' file.
+                args '--accessToken', project.getProperty('mc_accessToken')
+            }
+
             property 'mixin.env.disableRefMap', 'true'
             property 'mixin.env.refMapRemappingFile', "${projectDir}/build/createSrgToMcp/output.srg"
             workingDirectory project.file('run')

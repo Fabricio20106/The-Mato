@@ -21,6 +21,7 @@ import net.minecraft.potion.Effects;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockReader;
+import net.minecraftforge.common.ToolType;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -121,7 +122,7 @@ public class MTBlocks {
     public static final RegistryObject<Block> JUNIUM_WALL_SIGN = BLOCKS.register("junium_wall_sign", () -> new MTWallSignBlock(AbstractBlock.Properties.copy(JUNIUM_PLANKS.get()).noCollission().strength(1).lootFrom(MTBlocks.JUNIUM_SIGN), MTWoodTypes.JUNIUM));
 
     // Cactus Wood
-    public static final RegistryObject<Block> STRIPPED_CACTUS = BLOCKS.register("stripped_cactus", () -> new StrippedCactusBlock(AbstractBlock.Properties.of(Material.CACTUS, MaterialColor.GRASS).strength(0.4F).sound(SoundType.WOOL)));
+    public static final RegistryObject<Block> STRIPPED_CACTUS = BLOCKS.register("stripped_cactus", () -> new StrippedCactusBlock(AbstractBlock.Properties.of(Material.CACTUS, MaterialColor.GRASS).harvestTool(ToolType.AXE).strength(0.4F).sound(SoundType.WOOL)));
     public static final RegistryObject<Block> CACTUS_PLANKS = BLOCKS.register("cactus_planks", () -> new Block(AbstractBlock.Properties.of(Material.WOOD, MaterialColor.GRASS).strength(2, 3).sound(SoundType.WOOD)));
     public static final RegistryObject<Block> CACTUS_STAIRS = BLOCKS.register("cactus_stairs", () -> new StairsBlock(() -> CACTUS_PLANKS.get().defaultBlockState(), AbstractBlock.Properties.copy(CACTUS_PLANKS.get())));
     public static final RegistryObject<Block> CACTUS_SLAB = BLOCKS.register("cactus_slab", () -> new SlabBlock(AbstractBlock.Properties.copy(CACTUS_PLANKS.get())));
@@ -133,12 +134,12 @@ public class MTBlocks {
     public static final RegistryObject<Block> CACTUS_WALL_SIGN = BLOCKS.register("cactus_wall_sign", () -> new MTWallSignBlock(AbstractBlock.Properties.copy(CACTUS_PLANKS.get()).noCollission().strength(1).lootFrom(MTBlocks.CACTUS_SIGN), MTWoodTypes.CACTUS));
 
     // Miscellaneous from 1.18
-    public static final RegistryObject<Block> CALCITE = BLOCKS.register("calcite", () -> new Block(AbstractBlock.Properties.of(Material.STONE, MaterialColor.TERRACOTTA_WHITE).strength(0.75F).sound(MTSoundTypes.CALCITE)));
+    public static final RegistryObject<Block> CALCITE = BLOCKS.register("calcite", () -> new Block(AbstractBlock.Properties.of(Material.STONE, MaterialColor.TERRACOTTA_WHITE).requiresCorrectToolForDrops().harvestTool(ToolType.PICKAXE).strength(0.75F).sound(MTSoundTypes.CALCITE)));
     public static final RegistryObject<Block> POWDER_SNOW = BLOCKS.register("powder_snow", () -> new PowderSnowBlock(AbstractBlock.Properties.of(MTMaterials.POWDER_SNOW).dynamicShape().requiresCorrectToolForDrops().strength(0.25F).sound(MTSoundTypes.POWDER_SNOW)));
     public static final RegistryObject<Block> CAULDRON = BLOCKS.register("cauldron", () -> new EmptyCauldronBlock(AbstractBlock.Properties.copy(Blocks.CAULDRON)));
     public static final RegistryObject<Block> WATER_CAULDRON = BLOCKS.register("water_cauldron", () -> new LayeredCauldronBlock(AbstractBlock.Properties.copy(Blocks.CAULDRON), LayeredCauldronBlock.RAIN, CauldronInteraction.WATER));
     public static final RegistryObject<Block> DYED_WATER_CAULDRON = BLOCKS.register("dyed_water_cauldron", () -> new DyedWaterCauldronBlock(0x3F76E4, AbstractBlock.Properties.copy(Blocks.CAULDRON)));
-    public static final RegistryObject<Block> LAVA_CAULDRON = BLOCKS.register("lava_cauldron", () -> new LavaCauldronBlock(AbstractBlock.Properties.copy(Blocks.CAULDRON).lightLevel((light) -> 15)));
+    public static final RegistryObject<Block> LAVA_CAULDRON = BLOCKS.register("lava_cauldron", () -> new LavaCauldronBlock(AbstractBlock.Properties.copy(Blocks.CAULDRON).lightLevel(light -> 15)));
     public static final RegistryObject<Block> POWDER_SNOW_CAULDRON = BLOCKS.register("powder_snow_cauldron", () -> new PowderSnowCauldronBlock(AbstractBlock.Properties.copy(Blocks.CAULDRON), LayeredCauldronBlock.SNOW, CauldronInteraction.POWDER_SNOW));
     public static final RegistryObject<Block> MILK_CAULDRON = BLOCKS.register("milk_cauldron", () -> new LayeredCauldronBlock(AbstractBlock.Properties.copy(Blocks.CAULDRON), LayeredCauldronBlock.RAIN, CauldronInteraction.MILK));
 

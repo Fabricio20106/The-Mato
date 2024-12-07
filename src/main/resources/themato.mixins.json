@@ -5,14 +5,16 @@
   "refmap": "themato.mixins.refmap.json",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
-    "MTAbstractFurnaceTileEntityMixin",
-    "MTBootstrapMixin",
-    "MTCactusBlockMixin",
-    "MTCauldronBlockMixin",
-    "MTTreeFeatureMixin",
-    "MTWorldCarverMixin"
+    "block.MTBlockMixin",
+    "block.MTCactusBlockMixin",
+    "block.MTCauldronBlockMixin",
+    "blockentity.MTAbstractFurnaceTileEntityMixin",
+    "world.MTTreeFeatureMixin",
+    "world.MTWorldCarverMixin"
   ],
-  "client": [],
+  "client": [
+    "entity.MTLivingRendererMixin"
+  ],
   "server": [],
   "injectors": {
     "defaultRequire": 1

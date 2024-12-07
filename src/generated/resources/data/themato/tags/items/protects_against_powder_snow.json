@@ -1,0 +1,22 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:leather_helmet",
+    "minecraft:leather_chestplate",
+    "minecraft:leather_leggings",
+    "minecraft:leather_boots",
+    "minecraft:leather_horse_armor",
+    {
+      "id": "variants:rabbit_hide_sweatchest",
+      "required": false
+    },
+    {
+      "id": "variants:phantom_membrane_sweatchest",
+      "required": false
+    },
+    {
+      "id": "variants:wool_sweatchest",
+      "required": false
+    }
+  ]
+}

@@ -119,10 +119,13 @@
   "configs.themato.theWoodsGeneration.tooltip": "Allow The Woods (biome) to generate?",
   "death.attack.freeze": "%1$s froze to death",
   "death.attack.freeze.player": "%1$s was frozen to death by %2$s",
+  "effect.themato.freezing": "Freezing",
+  "gamerule.freezeDamage": "Deal freeze damage",
   "item.themato.cactus_candy": "Cactus Candy",
   "item.themato.dyed_water_bucket": "Dyed Water Bucket",
   "item.themato.liquid_cactus_bucket": "Liquid Cactus Bucket",
   "item.themato.powder_snow_bucket": "Powder Snow Bucket",
   "itemGroup.themato_tab": "The Mato",
+  "subtitles.entity.player.hurt_freeze": "Player freezes",
   "tooltip.themato.dyed_water_color": "Color: %s"
 }

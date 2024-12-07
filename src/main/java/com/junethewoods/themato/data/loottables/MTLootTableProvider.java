@@ -7,6 +7,7 @@ import net.minecraft.data.LootTableProvider;
 import net.minecraft.loot.*;
 import net.minecraft.util.ResourceLocation;
 
+import javax.annotation.Nonnull;
 import java.util.List;
 import java.util.Map;
 import java.util.function.BiConsumer;
@@ -19,6 +20,7 @@ public class MTLootTableProvider extends LootTableProvider {
     }
 
     @Override
+    @Nonnull
     public String getName() {
         return "The Mato - Loot Tables";
     }

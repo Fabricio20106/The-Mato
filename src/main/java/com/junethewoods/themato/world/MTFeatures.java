@@ -2,9 +2,9 @@ package com.junethewoods.themato.world;
 
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
-import com.junethewoods.themato.TheMato;
 import com.junethewoods.themato.block.MTBlocks;
 import com.junethewoods.themato.util.MTTags;
+import com.junethewoods.themato.util.MTUtils;
 import com.junethewoods.themato.world.stateprovider.custom.MatoFlowerBlockStateProvider;
 import net.minecraft.block.Blocks;
 import net.minecraft.fluid.Fluids;
@@ -152,6 +152,6 @@ public class MTFeatures {
             .range(256).squared().count(30));
 
     public static <FC extends IFeatureConfig> ConfiguredFeature<FC, ?> register(String name, ConfiguredFeature<FC, ?> configuredFeature) {
-        return Registry.register(WorldGenRegistries.CONFIGURED_FEATURE, TheMato.resourceLoc(name), configuredFeature);
+        return Registry.register(WorldGenRegistries.CONFIGURED_FEATURE, MTUtils.theMato(name), configuredFeature);
     }
 }

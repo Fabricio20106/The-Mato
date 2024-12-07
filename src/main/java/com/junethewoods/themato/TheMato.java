@@ -4,7 +4,8 @@ import com.junethewoods.themato.config.MTConfigs;
 import com.junethewoods.themato.proxy.MTClientProxy;
 import com.junethewoods.themato.proxy.MTCommonProxy;
 import com.junethewoods.themato.proxy.MTServerProxy;
-import net.minecraft.util.ResourceLocation;
+import com.junethewoods.themato.util.MTUtils;
+import net.minecraft.world.GameRules;
 import net.minecraftforge.common.ForgeMod;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.DistExecutor;
@@ -28,9 +29,6 @@ public class TheMato {
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, MTConfigs.CAVES_AND_CLIFFS_SPEC, "jtw-mods/themato-cavesandcliffs.toml");
         ForgeMod.enableMilkFluid();
         MTConfigs.init();
-    }
-
-    public static ResourceLocation resourceLoc(String name) {
-        return new ResourceLocation(MOD_ID, name);
+        MTUtils.init();
     }
 }

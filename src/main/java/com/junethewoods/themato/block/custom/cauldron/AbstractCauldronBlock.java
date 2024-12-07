@@ -1,6 +1,7 @@
 package com.junethewoods.themato.block.custom.cauldron;
 
 import com.junethewoods.themato.cauldron.CauldronInteraction;
+import com.junethewoods.themato.item.MTItems;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.Entity;
@@ -12,6 +13,7 @@ import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
+import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.math.shapes.IBooleanFunction;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
@@ -64,6 +66,11 @@ public abstract class AbstractCauldronBlock extends Block {
     }
 
     public abstract boolean isFull(BlockState state);
+
+    @Override
+    public ItemStack getPickBlock(BlockState state, RayTraceResult target, IBlockReader world, BlockPos pos, PlayerEntity player) {
+        return new ItemStack(MTItems.CAULDRON.get());
+    }
 
     public boolean isPathfindable(BlockState state, IBlockReader world, BlockPos pos, PathType pathType) {
         return false;

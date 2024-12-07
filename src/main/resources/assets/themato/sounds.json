@@ -277,6 +277,117 @@
       }
     ]
   },
+  "music.overworld.forest": {
+    "sounds": [
+      {
+        "name": "music/game/piano1",
+        "stream": true
+      },
+      {
+        "name": "music/game/piano2",
+        "stream": true
+      },
+      {
+        "name": "music/game/piano3",
+        "stream": true
+      },
+      {
+        "name": "music/game/hal1",
+        "stream": true
+      },
+      {
+        "name": "music/game/hal2",
+        "stream": true
+      },
+      {
+        "name": "music/game/hal3",
+        "stream": true
+      },
+      {
+        "name": "music/game/hal4",
+        "stream": true
+      },
+      {
+        "name": "music/game/calm1",
+        "stream": true
+      },
+      {
+        "name": "music/game/calm2",
+        "stream": true
+      },
+      {
+        "name": "music/game/calm3",
+        "stream": true
+      },
+      {
+        "name": "music/game/nuance1",
+        "stream": true
+      },
+      {
+        "name": "music/game/nuance2",
+        "stream": true
+      },
+      {
+        "name": "themato:music/game/caves_and_cliffs/left_to_bloom",
+        "stream": true,
+        "volume": 0.4
+      },
+      {
+        "name": "themato:music/game/caves_and_cliffs/one_more_day",
+        "stream": true,
+        "volume": 0.4
+      },
+      {
+        "name": "themato:music/game/caves_and_cliffs/floating_dream",
+        "stream": true,
+        "volume": 0.4
+      },
+      {
+        "name": "themato:music/game/caves_and_cliffs/comforting_memories",
+        "stream": true,
+        "volume": 0.4
+      },
+      {
+        "name": "themato:music/game/wild_update/firebugs",
+        "stream": true,
+        "volume": 0.4
+      },
+      {
+        "name": "themato:music/game/wild_update/aerie",
+        "stream": true,
+        "volume": 0.4
+      },
+      {
+        "name": "themato:music/game/wild_update/labyrinthine",
+        "stream": true,
+        "volume": 0.4
+      },
+      {
+        "name": "themato:music/game/trails_and_tales/bromeliad",
+        "stream": true,
+        "volume": 0.4
+      }
+    ]
+  },
+  "music.overworld.swamp": {
+    "sounds": [
+      {
+        "name": "themato:music/game/wild_update/firebugs",
+        "stream": true,
+        "volume": 0.4
+      },
+      {
+        "name": "themato:music/game/wild_update/aerie",
+        "stream": true,
+        "volume": 0.4
+      },
+      {
+        "name": "themato:music/game/wild_update/labyrinthine",
+        "stream": true,
+        "volume": 0.4
+      }
+    ]
+  },
   "block.powder_snow.break": {
     "sounds": [
       "themato:block/powder_snow/break1",
@@ -407,6 +518,29 @@
       }
     ],
     "subtitle": "subtitles.item.bucket.empty"
+  },
+  "item.powder_snow_bucket.fill": {
+    "sounds": [
+      "themato:item/powder_snow_bucket/fill1",
+      {
+        "name": "themato:item/powder_snow_bucket/fill1",
+        "pitch": 0.9
+      },
+      {
+        "name": "themato:item/powder_snow_bucket/fill1",
+        "pitch": 1.1
+      },
+      "themato:item/powder_snow_bucket/fill2",
+      {
+        "name": "themato:item/powder_snow_bucket/fill2",
+        "pitch": 0.9
+      },
+      {
+        "name": "themato:item/powder_snow_bucket/fill2",
+        "pitch": 1.1
+      }
+    ],
+    "subtitle": "subtitles.item.bucket.fill"
   },
   "block.calcite.break": {
     "sounds": [

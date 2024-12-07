@@ -2,6 +2,7 @@ package com.junethewoods.themato.data.lang;
 
 import com.junethewoods.themato.TheMato;
 import com.junethewoods.themato.block.MTBlocks;
+import com.junethewoods.themato.effect.MTEffects;
 import com.junethewoods.themato.item.MTItems;
 import net.minecraft.data.DataGenerator;
 import net.minecraftforge.common.data.LanguageProvider;
@@ -135,6 +136,8 @@ public class MTEnglishLanguageProvider extends LanguageProvider {
         addItem(MTItems.DYED_WATER_BUCKET, "Dyed Water Bucket");
         addItem(MTItems.CACTUS_CANDY, "Cactus Candy");
 
+        addEffect(MTEffects.FREEZING, "Freezing");
+
         add("itemGroup.themato_tab", "The Mato");
         add("biome.themato.ipe_forest", "Ipe Forest");
         add("biome.themato.the_woods", "The Woods");
@@ -148,6 +151,8 @@ public class MTEnglishLanguageProvider extends LanguageProvider {
         add("death.attack.freeze", "%1$s froze to death");
         add("death.attack.freeze.player", "%1$s was frozen to death by %2$s");
 
+        add("gamerule.freezeDamage", "Deal freeze damage");
+
         add("configs.themato.ipeForestGeneration", "Ipe Forest Generation");
         add("configs.themato.ipeForestGeneration.tooltip", "Allow Ipe Forests to generate?");
         add("configs.themato.theWoodsGeneration", "The Woods Generation");
@@ -156,5 +161,7 @@ public class MTEnglishLanguageProvider extends LanguageProvider {
         add("configs.themato.matoFlowersGeneration.tooltip", "Allow flowers added by The Mato (roses, cyan roses and paeonias) to generate?");
 
         add("tooltip.themato.dyed_water_color", "Color: %s");
+
+        add("subtitles.entity.player.hurt_freeze", "Player freezes");
     }
 }

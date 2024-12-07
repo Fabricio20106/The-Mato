@@ -1,17 +1,17 @@
 package com.junethewoods.themato.item.custom;
 
+import com.junethewoods.themato.dispenser.BlockBucketDispenseBehavior;
+import com.junethewoods.themato.util.MTUtils;
 import net.minecraft.block.Block;
 import net.minecraft.block.DispenserBlock;
-import net.minecraft.dispenser.DefaultDispenseItemBehavior;
-import net.minecraft.dispenser.IBlockSource;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.*;
 import net.minecraft.util.ActionResultType;
-import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.world.World;
 
+import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
 public class BlockBucketItem extends BlockItem {
@@ -20,35 +20,22 @@ public class BlockBucketItem extends BlockItem {
 
     public BlockBucketItem(Block block, Properties properties) {
         super(block, properties);
-        DispenserBlock.registerBehavior(this, new DefaultDispenseItemBehavior() {
-            private final DefaultDispenseItemBehavior defaultBehavior = new DefaultDispenseItemBehavior();
-
-            public ItemStack execute(IBlockSource source, ItemStack stack) {
-                BucketItem bucket = (BucketItem) stack.getItem();
-                BlockPos pos = source.getPos().relative(source.getBlockState().getValue(DispenserBlock.FACING));
-                World world = source.getLevel();
-                if (emptyContents(null, world, pos, null)) {
-                    bucket.checkExtraContent(world, stack, pos);
-                    return new ItemStack(Items.BUCKET);
-                } else {
-                    return this.defaultBehavior.dispense(source, stack);
-                }
-            }
-        });
+        DispenserBlock.registerBehavior(this, new BlockBucketDispenseBehavior());
     }
 
     @Override
+    @Nonnull
     public ActionResultType useOn(ItemUseContext context) {
         ActionResultType resultType = super.useOn(context);
         PlayerEntity player = context.getPlayer();
         if (resultType.consumesAction() && player != null && !player.isCreative()) {
-            Hand hand = context.getHand();
-            player.setItemInHand(hand, Items.BUCKET.getDefaultInstance());
+            MTUtils.setItemInHand(player, context.getHand(), new ItemStack(Items.BUCKET));
         }
         return resultType;
     }
 
     @Override
+    @Nonnull
     public String getDescriptionId() {
         return this.getOrCreateDescriptionId();
     }

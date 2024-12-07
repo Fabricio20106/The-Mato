@@ -1,18 +1,31 @@
 package com.junethewoods.themato.block.custom;
 
-import com.junethewoods.themato.misc.MTDamageSources;
+import com.junethewoods.themato.effect.MTEffects;
+import com.junethewoods.themato.item.MTItems;
+import com.junethewoods.themato.sound.MTSounds;
+import com.junethewoods.themato.util.CavesAndCliffsUtils;
 import com.junethewoods.themato.util.MTTags;
+import com.junethewoods.themato.util.MTUtils;
+import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.MobEntity;
 import net.minecraft.entity.item.FallingBlockEntity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.inventory.EquipmentSlotType;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.particles.ParticleTypes;
+import net.minecraft.pathfinding.PathNodeType;
 import net.minecraft.pathfinding.PathType;
-import net.minecraft.util.Direction;
+import net.minecraft.potion.EffectInstance;
+import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.math.shapes.EntitySelectionContext;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
@@ -22,8 +35,11 @@ import net.minecraft.world.GameRules;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 
+import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
 import java.util.Random;
 
+@SuppressWarnings("deprecation")
 public class PowderSnowBlock extends Block {
     private static final VoxelShape FALLING_COLLISION_SHAPE = VoxelShapes.box(0, 0, 0, 1, 0.9F, 1);
 
@@ -31,15 +47,32 @@ public class PowderSnowBlock extends Block {
         super(properties);
     }
 
-    // TODO: Fix weird rendering when besides a non-full block.
     @Override
-    public boolean skipRendering(BlockState state, BlockState state1, Direction direction) {
-        return state1.is(this) ? true : super.skipRendering(state, state1, direction);
+    public boolean skipRendering(BlockState state, BlockState adjacentState, Direction direction) {
+        return adjacentState.is(this) || super.skipRendering(state, adjacentState, direction);
     }
 
     @Override
+    @Nonnull
     public VoxelShape getOcclusionShape(BlockState state, IBlockReader world, BlockPos pos) {
         return VoxelShapes.empty();
+    }
+
+    @Override
+    @Nonnull
+    public ActionResultType use(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockRayTraceResult hitResult) {
+        ItemStack handStack = player.getItemInHand(hand);
+        if (handStack.getItem() == Items.BUCKET) {
+            player.playSound(MTSounds.POWDER_SNOW_BUCKET_FILL.get(), 1, 1);
+            ItemStack powderSnowBucket = new ItemStack(MTItems.POWDER_SNOW_BUCKET.get());
+            ItemStack exchangedStack = CavesAndCliffsUtils.createFilledResult(handStack, player, powderSnowBucket, true);
+            MTUtils.setItemInHand(player, hand, exchangedStack);
+            if (!world.isClientSide) CriteriaTriggers.FILLED_BUCKET.trigger((ServerPlayerEntity) player, powderSnowBucket);
+            world.setBlock(pos, Blocks.AIR.defaultBlockState(), 3);
+            return ActionResultType.sidedSuccess(world.isClientSide);
+        } else {
+            return super.use(state, world, pos, player, hand, hitResult);
+        }
     }
 
     @Override
@@ -50,12 +83,15 @@ public class PowderSnowBlock extends Block {
                 Random rand = world.getRandom();
                 boolean flag = entity.xOld != entity.getX() || entity.zOld != entity.getZ();
                 if (flag && rand.nextBoolean()) {
-                    world.addParticle(ParticleTypes.ITEM_SNOWBALL, entity.getX(), pos.getY() + 1, entity.getZ(), (randomBetween(rand, -1, 1) * 0.083333336F), 0.05F, (randomBetween(rand, -1, 1) * 0.083333336F));
-                    if (world.getGameTime() % 40 == 0 && entity instanceof LivingEntity) {
-                        LivingEntity livEntity = (LivingEntity) entity;
-                        if (!livEntity.getType().is(MTTags.Entities.FREEZE_IMMUNE_ENTITY_TYPES)) livEntity.hurt(MTDamageSources.FREEZING, 1);
+                    world.addParticle(ParticleTypes.ITEM_SNOWBALL, entity.getX(), pos.getY() + 1, entity.getZ(), (MTUtils.randomBetween(rand, -1, 1) * 0.083333336F), 0.05F, (MTUtils.randomBetween(rand, -1, 1) * 0.083333336F));
+                }
+            }
+            if (entity instanceof LivingEntity && !world.isClientSide) {
+                LivingEntity livEntity = (LivingEntity) entity;
+                if (!livEntity.getType().is(MTTags.Entities.FREEZE_IMMUNE_ENTITY_TYPES) && !livEntity.hasEffect(MTEffects.FREEZING.get()) && world.getGameRules().getBoolean(MTUtils.FREEZE_DAMAGE)) {
+                    if (MTUtils.hasAnyMatching(livEntity.getArmorSlots(), stack -> !stack.getItem().is(MTTags.Items.PROTECTS_AGAINST_POWDER_SNOW))) {
+                        livEntity.addEffect(new EffectInstance(MTEffects.FREEZING.get(), 200, 0, false, false, false));
                     }
-
                 }
             }
         }
@@ -69,11 +105,13 @@ public class PowderSnowBlock extends Block {
     @Override
     public void fallOn(World world, BlockPos pos, Entity entity, float distance) {
         if (!(distance < 4) && entity instanceof LivingEntity) {
-            entity.playSound(world.getBlockState(pos).getSoundType().getFallSound(), 1, 1);
+            SoundEvent fallSound = distance < 7 ? SoundEvents.GENERIC_BIG_FALL : SoundEvents.GENERIC_SMALL_FALL;
+            entity.playSound(fallSound, 1, 1);
         }
     }
 
     @Override
+    @Nonnull
     public VoxelShape getCollisionShape(BlockState state, IBlockReader world, BlockPos pos, ISelectionContext context) {
         if (context instanceof EntitySelectionContext) {
             EntitySelectionContext entitySelectionContext = (EntitySelectionContext) context;
@@ -94,6 +132,7 @@ public class PowderSnowBlock extends Block {
     }
 
     @Override
+    @Nonnull
     public VoxelShape getVisualShape(BlockState state, IBlockReader world, BlockPos pos, ISelectionContext context) {
         return VoxelShapes.empty();
     }
@@ -111,7 +150,9 @@ public class PowderSnowBlock extends Block {
         return true;
     }
 
-    public static float randomBetween(Random rand, float a, float b) {
-        return rand.nextFloat() * (b - a) + a;
+    @Override
+    @Nullable
+    public PathNodeType getAiPathNodeType(BlockState state, IBlockReader world, BlockPos pos, @Nullable MobEntity entity) {
+        return PathNodeType.WALKABLE;
     }
 }

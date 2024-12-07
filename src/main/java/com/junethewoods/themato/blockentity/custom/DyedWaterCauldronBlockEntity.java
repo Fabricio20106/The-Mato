@@ -5,6 +5,8 @@ import net.minecraft.block.BlockState;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.tileentity.TileEntity;
 
+import javax.annotation.Nonnull;
+
 public class DyedWaterCauldronBlockEntity extends TileEntity {
     private int dyedWaterColor;
 
@@ -12,29 +14,28 @@ public class DyedWaterCauldronBlockEntity extends TileEntity {
         super(MTBlockEntities.DYED_WATER_CAULDRON.get());
     }
 
-    public DyedWaterCauldronBlockEntity(int dyedWaterColor) {
-        this();
-        this.dyedWaterColor = dyedWaterColor;
-    }
-
     @Override
+    @Nonnull
     public CompoundNBT save(CompoundNBT tag) {
         super.save(tag);
-        tag.putInt("dyed_water_color", getDyedWaterColor());
+        CompoundNBT forgeData = new CompoundNBT();
+        forgeData.putInt("dyed_water_color", this.dyedWaterColor);
+        tag.put("ForgeData", forgeData);
         return tag;
     }
 
     @Override
     public void load(BlockState state, CompoundNBT tag) {
         super.load(state, tag);
-        this.setDyedWaterColor(tag.getInt("dyed_water_color"));
+        CompoundNBT forgeData = tag.getCompound("ForgeData");
+        this.dyedWaterColor = forgeData.getInt("dyed_water_color");
     }
 
-    public int getDyedWaterColor() {
+    public int getWaterColor() {
         return this.dyedWaterColor;
     }
 
-    public void setDyedWaterColor(int waterColor) {
+    public void setWaterColor(int waterColor) {
         this.dyedWaterColor = waterColor;
     }
 }

@@ -1,6 +1,6 @@
 package com.junethewoods.themato.world.surface;
 
-import com.junethewoods.themato.TheMato;
+import com.junethewoods.themato.util.MTUtils;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.util.registry.WorldGenRegistries;
@@ -29,7 +29,7 @@ public class MTSurfaceBuilders {
     public static final ConfiguredSurfaceBuilder<SurfaceBuilderConfig> GROVE = register("grove", SurfaceBuilder.DEFAULT.configured(GROVE_CONFIG));
 
     private static <SC extends ISurfaceBuilderConfig> ConfiguredSurfaceBuilder<SC> register(String name, ConfiguredSurfaceBuilder<SC> csb) {
-        return WorldGenRegistries.register(WorldGenRegistries.CONFIGURED_SURFACE_BUILDER, TheMato.resourceLoc(name), csb);
+        return WorldGenRegistries.register(WorldGenRegistries.CONFIGURED_SURFACE_BUILDER, MTUtils.theMato(name), csb);
     }
 
     public static void init() {}

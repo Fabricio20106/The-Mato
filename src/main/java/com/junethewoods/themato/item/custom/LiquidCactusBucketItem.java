@@ -10,12 +10,15 @@ import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.world.World;
 
+import javax.annotation.Nonnull;
+
 public class LiquidCactusBucketItem extends Item {
     public LiquidCactusBucketItem(Properties properties) {
         super(properties);
     }
 
     @Override
+    @Nonnull
     public ActionResult<ItemStack> use(World world, PlayerEntity player, Hand hand) {
         if (player.isShiftKeyDown()) {
             ItemStack handStack = player.getItemInHand(hand);

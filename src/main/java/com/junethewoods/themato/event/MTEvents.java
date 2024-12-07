@@ -3,16 +3,19 @@ package com.junethewoods.themato.event;
 import com.junethewoods.themato.TheMato;
 import com.junethewoods.themato.block.MTBlocks;
 import com.junethewoods.themato.config.MTConfigs;
+import com.junethewoods.themato.sound.MTSounds;
 import com.junethewoods.themato.world.MTFeatures;
 import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
 import net.minecraft.world.biome.Biome;
+import net.minecraft.world.biome.Biomes;
 import net.minecraft.world.gen.GenerationStage;
 import net.minecraftforge.client.event.EntityViewRenderEvent;
 import net.minecraftforge.common.world.BiomeGenerationSettingsBuilder;
 import net.minecraftforge.event.world.BiomeLoadingEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
+
+import static com.junethewoods.themato.util.MTUtils.replaceBiomeMusic;
 
 @Mod.EventBusSubscriber(modid = TheMato.MOD_ID)
 public class MTEvents {
@@ -23,6 +26,10 @@ public class MTEvents {
             settings.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, MTFeatures.MATO_FLOWERS_MOD);
             settings.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, MTFeatures.DECORATED_MATO_FLOWERS);
         }
+        replaceBiomeMusic(Biomes.FOREST, MTSounds.FOREST_MUSIC.get(), event);
+        replaceBiomeMusic(Biomes.WOODED_HILLS, MTSounds.FOREST_MUSIC.get(), event);
+        replaceBiomeMusic(Biomes.SWAMP, MTSounds.SWAMP_MUSIC.get(), event);
+        replaceBiomeMusic(Biomes.SWAMP_HILLS, MTSounds.SWAMP_MUSIC.get(), event);
     }
 
     @SubscribeEvent
